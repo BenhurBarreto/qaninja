@@ -23,3 +23,9 @@ Devo ver a área logada
 
     # ATDD (Desenvolvimento guiado por teste de aceitação)
     # ATDD só é ATDD se o desenvolvedor ler a especificação e desenvolver orientado a ela
+
+Devo ver um toaster com a mensagem
+    [Arguments]       ${expect_message}
+
+    Wait Until Element Contains        css:div[type=error] p       ${expect_message}
+    Close Browser
