@@ -1,6 +1,12 @@
 ***Settings***
 Documentation   Login
 Resource        ../resources/kws.robot
+Resource        ../resources/hooks.robot
+
+# executa uma ou mais keywords antes da execução de todos os steps de cada caso de teste
+Test Setup          Start Session
+# executa uma ou mais Keywords após a execução de todos os steps de cada caso de teste
+Test Teardown       Finish Session
 
 ***Test Cases***
 Login do Administrador
