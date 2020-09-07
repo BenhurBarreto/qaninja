@@ -1,7 +1,7 @@
 ***Settings***
 Documentation   Login Tentativa
-Resource        ../resources/kws.robot
-Resource        ../resources/hooks.robot
+Resource        ../resources/base.robot
+
 Test Template   Tentativa de Login
 
 # executa uma ou mais keywords antes da execução de todos os steps de cada caso de teste
