@@ -1,3 +1,7 @@
+***Settings***
+
+Library     SeleniumLibrary
+
 ***Keywords***
 Start Session
     Open Browser    about:blank   chrome
