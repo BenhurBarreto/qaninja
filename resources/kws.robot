@@ -16,7 +16,7 @@ Submeto minhas credenciais
 
 Devo ver a área logada
     #Wait Until Element is Visible   //strong[text()'Sair']  5
-    Wait Until Page Contains    Aluguéis    
+    Wait Until Page Contains    Aluguéis    10
     #Close Browser
     # BDD - Comportamento (Dado, Quando e Então)
     # BDD só é BDD se o desenvolvedor ler a especificação e desenvolver orientado a ela
