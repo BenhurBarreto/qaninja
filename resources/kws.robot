@@ -9,10 +9,7 @@ Acesso a página Login
 Submeto minhas credenciais
     [Arguments]     ${email}    ${password}
 
-    Input Text      id:txtEmail                     ${email}
-    Input Text      css:input[placeholder=Senha]    ${password}
-    #Click Element   xpath://button[text():'Entrar']
-    Click Element   xpath://button[text()='Entrar']
+    Login With  ${email}    ${password}
 
 Devo ver a área logada
     #Wait Until Element is Visible   //strong[text()'Sair']  5
@@ -27,5 +24,23 @@ Devo ver a área logada
 Devo ver um toaster com a mensagem
     [Arguments]       ${expect_message}
 
-    Wait Until Element Contains        css:div[type=error] p       ${expect_message}
+    Wait Until Element Contains        ${TOASTER_ERROR}       ${expect_message}
     #Close Browser
+
+## CUSTOMERS
+
+Dado que acesso o formulário do cadastro de clientes
+    Wait Until Element Is Visible       ${NAV_CUSTOMERS}      5
+    Click Element                       ${NAV_CUSTOMERS}
+    Wait Until Element Is Visible       ${CUSTOMER_FORM}       5
+    Click Element                       ${CUSTOMER_FORM}
+
+Quando faço a inclusão deste cliente:
+    [Arguments]     ${name}     ${cpf}      ${address}      ${phone_number}
+
+    Register New Customer       ${name}     ${cpf}      ${address}      ${phone_number}
+
+Então devo ver a notificação:
+    [Arguments]     ${expect_notice}
+
+    Wait Until Element Contains         ${TOASTER_SUCCESS}      ${expect_notice}    5
