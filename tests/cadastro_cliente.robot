@@ -33,6 +33,10 @@ Endereço é Obrigatório
     [Template]      Validação de Campos
     Calebe Gael     53695887087     ${EMPTY}        11999999999     Endereço é obrigatório
 
+Telefone incorreto
+    [Template]      Validação de Campos
+    João da Silva   0000001406      Rua dos Bugs, 1000  119999999   Telefone inválido
+
 Telefone é Obrigatório
     [Tags]          required
     [Template]      Validação de Campos
