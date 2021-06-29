@@ -2,7 +2,7 @@
 
 Library     SeleniumLibrary
 
-#Library     libs/db.py
+Library     libs/db.py
 
 Resource    kws.robot
 Resource    hooks.robot

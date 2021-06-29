@@ -8,14 +8,23 @@ Suite Teardown       Finish Session
 ***Test Cases***
 Novo cliente
     Dado que acesso o formulário do cadastro de clientes
-    Quando Faço A Inclusão Deste Cliente:
+    E que eu tenho o seguinte cliente:
     ...         Bon Jovi        00000001406      Rua dos Bugs, 1000      51999999999
+    Quando Faço A Inclusão Deste Cliente
     Então devo ver a notificação:       Cliente cadastrado com sucesso!
+
+Cliente duplicado
+    Dado que acesso o formulário do cadastro de clientes
+    E que eu tenho o seguinte cliente:
+    ...         Adrian Smith        00000001441      Rua dos Bugs, 2000      11999999999
+    Quando Faço A Inclusão Deste Cliente
+    Então devo ver a notificação de erro:       Este CPF já existe no sistema!
 
 Campos Obrigatórios
     Dado que acesso o formulário do cadastro de clientes
-    Quando Faço A Inclusão Deste Cliente:
+    E que eu tenho o seguinte cliente:
     ...             ${EMPTY}        ${EMPTY}        ${EMPTY}        ${EMPTY}
+    Quando Faço A Inclusão Deste Cliente
     Então devo ver mensagens informando que os campos do cadastro de clientes são obrigatórios
 
 Nome é Obrigatório
@@ -48,6 +57,7 @@ Validação de Campos
     [Arguments]     ${nome}     ${cpf}      ${endereco}     ${telefone}     ${saida}
 
     Dado que acesso o formulário do cadastro de clientes
-    Quando Faço A Inclusão Deste Cliente:
+    E que eu tenho o seguinte cliente:
     ...             ${nome}     ${cpf}      ${endereco}     ${telefone}
+    Quando Faço A Inclusão Deste Cliente    
     Então Devo Ver O Texto:     ${saida}
