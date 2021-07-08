@@ -3,6 +3,8 @@
 Library     SeleniumLibrary
 
 ***Keywords***
+# login
+
 Acesso a página Login
     Go To       ${base_url}
 
@@ -27,11 +29,10 @@ Devo ver um toaster com a mensagem
     Wait Until Element Contains        ${TOASTER_ERROR_P}       ${expect_message}
     #Close Browser
 
-## CUSTOMERS
+# Save Customer
 
 Dado que acesso o formulário do cadastro de clientes
-    Wait Until Element Is Visible       ${NAV_CUSTOMERS}        5
-    Click Element                       ${NAV_CUSTOMERS}
+    Go To Customers
     Wait Until Element Is Visible       ${CUSTOMER_FORM}        5
     Click Element                       ${CUSTOMER_FORM}
 
@@ -69,4 +70,32 @@ Então devo ver mensagens informando que os campos do cadastro de clientes são 
 
 Então Devo Ver O Texto:
     [Arguments]         ${expect_text}
-    Wait Until Page Contains           ${expect_text}          500
+    Wait Until Page Contains           ${expect_text}          5
+
+E esse cliente deve ser exibido na lista
+    ${cpf_formatado}=           Format Cpf      ${cpf}
+    Go Back
+    Wait Until Element Is Visible       ${CUSTOMER_LIST}       5
+    Table Should Contain                ${CUSTOMER_LIST}       ${cpf_formatado}
+
+# Remove Customer
+Dado que eu tenho um cliente indesejado:
+    [Arguments]         ${name}     ${cpf}     ${address}     ${phone_number}
+    Remove Customer By Cpf          ${cpf}
+    Insert Customer     ${name}     ${cpf}     ${address}     ${phone_number}
+
+    Set Test Variable               ${cpf}
+
+E acesso a lista de clientes
+    Go To Customers
+
+Quando eu removo esse cliente
+
+    ${cpf_formatado}=       Format Cpf      ${cpf}
+    Set Test Variable       ${cpf_formatado}
+
+    Go To Customer Details  ${cpf_formatado}
+    Click Remove Customer
+
+E esse cliente não deve aparecer na lista
+    Wait Until Page Does Not Contain       ${cpf_formatado}

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20210628 23:07:35.151" rpa="false">
+<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20210705 22:54:34.171" rpa="false">
 <suite id="s1" name="Tests" source="c:\qaninja\ze-palheta\tests">
 <suite id="s1-s1" name="Cadastro Cliente" source="c:\qaninja\ze-palheta\tests\cadastro_cliente.robot">
 <kw name="Login Session" library="hooks" type="setup">
@@ -10,22 +10,22 @@
 <arg>about:blank</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20210628 23:07:35.424" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20210628 23:07:35.424" endtime="20210628 23:07:36.675"></status>
+<msg timestamp="20210705 22:54:34.481" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210705 22:54:34.481" endtime="20210705 22:54:35.789"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210628 23:07:36.675" endtime="20210628 23:07:36.783"></status>
+<status status="PASS" starttime="20210705 22:54:35.790" endtime="20210705 22:54:35.905"></status>
 </kw>
-<status status="PASS" starttime="20210628 23:07:35.423" endtime="20210628 23:07:36.783"></status>
+<status status="PASS" starttime="20210705 22:54:34.480" endtime="20210705 22:54:35.905"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${base_url}</arg>
 </arguments>
-<msg timestamp="20210628 23:07:36.784" level="INFO">Opening url 'http://zepalheta-web:3000'</msg>
-<status status="PASS" starttime="20210628 23:07:36.784" endtime="20210628 23:07:38.573"></status>
+<msg timestamp="20210705 22:54:35.905" level="INFO">Opening url 'http://zepalheta-web:3000'</msg>
+<status status="PASS" starttime="20210705 22:54:35.905" endtime="20210705 22:54:38.031"></status>
 </kw>
 <kw name="Login With" library="LoginPage">
 <arguments>
@@ -38,8 +38,8 @@
 <arg>id:txtEmail</arg>
 <arg>${email}</arg>
 </arguments>
-<msg timestamp="20210628 23:07:38.574" level="INFO">Typing text 'admin@zepalheta.com.br' into text field 'id:txtEmail'.</msg>
-<status status="PASS" starttime="20210628 23:07:38.573" endtime="20210628 23:07:39.003"></status>
+<msg timestamp="20210705 22:54:38.031" level="INFO">Typing text 'admin@zepalheta.com.br' into text field 'id:txtEmail'.</msg>
+<status status="PASS" starttime="20210705 22:54:38.031" endtime="20210705 22:54:38.169"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -47,38 +47,41 @@
 <arg>css:input[placeholder=Senha]</arg>
 <arg>${password}</arg>
 </arguments>
-<msg timestamp="20210628 23:07:39.004" level="INFO">Typing text 'pwd123' into text field 'css:input[placeholder=Senha]'.</msg>
-<status status="PASS" starttime="20210628 23:07:39.003" endtime="20210628 23:07:39.079"></status>
+<msg timestamp="20210705 22:54:38.170" level="INFO">Typing text 'pwd123' into text field 'css:input[placeholder=Senha]'.</msg>
+<status status="PASS" starttime="20210705 22:54:38.169" endtime="20210705 22:54:38.255"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath://button[text()='Entrar']</arg>
 </arguments>
-<msg timestamp="20210628 23:07:39.080" level="INFO">Clicking element 'xpath://button[text()='Entrar']'.</msg>
-<status status="PASS" starttime="20210628 23:07:39.079" endtime="20210628 23:07:39.144"></status>
+<msg timestamp="20210705 22:54:38.256" level="INFO">Clicking element 'xpath://button[text()='Entrar']'.</msg>
+<status status="PASS" starttime="20210705 22:54:38.255" endtime="20210705 22:54:38.310"></status>
 </kw>
-<status status="PASS" starttime="20210628 23:07:38.573" endtime="20210628 23:07:39.144"></status>
+<status status="PASS" starttime="20210705 22:54:38.031" endtime="20210705 22:54:38.310"></status>
 </kw>
-<status status="PASS" starttime="20210628 23:07:35.423" endtime="20210628 23:07:39.145"></status>
+<status status="PASS" starttime="20210705 22:54:34.480" endtime="20210705 22:54:38.310"></status>
 </kw>
 <test id="s1-s1-t1" name="Novo cliente">
 <kw name="Dado que acesso o formulário do cadastro de clientes" library="kws">
+<kw name="Go To Customers" library="Sidebar">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
 <arg>${NAV_CUSTOMERS}</arg>
 <arg>5</arg>
 </arguments>
-<status status="PASS" starttime="20210628 23:07:39.150" endtime="20210628 23:07:39.385"></status>
+<status status="PASS" starttime="20210705 22:54:38.314" endtime="20210705 22:54:38.542"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${NAV_CUSTOMERS}</arg>
 </arguments>
-<msg timestamp="20210628 23:07:39.386" level="INFO">Clicking element 'css:a[href$=customers]'.</msg>
-<status status="PASS" starttime="20210628 23:07:39.386" endtime="20210628 23:07:39.427"></status>
+<msg timestamp="20210705 22:54:38.542" level="INFO">Clicking element 'css:a[href$=customers]'.</msg>
+<status status="PASS" starttime="20210705 22:54:38.542" endtime="20210705 22:54:38.582"></status>
+</kw>
+<status status="PASS" starttime="20210705 22:54:38.314" endtime="20210705 22:54:38.582"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
@@ -86,17 +89,17 @@
 <arg>${CUSTOMER_FORM}</arg>
 <arg>5</arg>
 </arguments>
-<status status="PASS" starttime="20210628 23:07:39.427" endtime="20210628 23:07:39.455"></status>
+<status status="PASS" starttime="20210705 22:54:38.582" endtime="20210705 22:54:38.608"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${CUSTOMER_FORM}</arg>
 </arguments>
-<msg timestamp="20210628 23:07:39.456" level="INFO">Clicking element 'css:a[href$=register]'.</msg>
-<status status="PASS" starttime="20210628 23:07:39.456" endtime="20210628 23:07:39.500"></status>
+<msg timestamp="20210705 22:54:38.608" level="INFO">Clicking element 'css:a[href$=register]'.</msg>
+<status status="PASS" starttime="20210705 22:54:38.608" endtime="20210705 22:54:38.655"></status>
 </kw>
-<status status="PASS" starttime="20210628 23:07:39.149" endtime="20210628 23:07:39.501"></status>
+<status status="PASS" starttime="20210705 22:54:38.313" endtime="20210705 22:54:38.655"></status>
 </kw>
 <kw name="E que eu tenho o seguinte cliente:" library="kws">
 <arguments>
@@ -109,42 +112,42 @@
 <arguments>
 <arg>${cpf}</arg>
 </arguments>
-<msg timestamp="20210628 23:07:39.513" level="INFO">delete from public.customers where cpf = '000.000.014-06';</msg>
-<status status="PASS" starttime="20210628 23:07:39.503" endtime="20210628 23:07:39.514"></status>
+<msg timestamp="20210705 22:54:38.671" level="INFO">delete from public.customers where cpf = '000.000.014-06';</msg>
+<status status="PASS" starttime="20210705 22:54:38.656" endtime="20210705 22:54:38.671"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
 <arguments>
 <arg>${name}</arg>
 </arguments>
-<msg timestamp="20210628 23:07:39.514" level="INFO">${name} = Bon Jovi</msg>
-<status status="PASS" starttime="20210628 23:07:39.514" endtime="20210628 23:07:39.515"></status>
+<msg timestamp="20210705 22:54:38.672" level="INFO">${name} = Bon Jovi</msg>
+<status status="PASS" starttime="20210705 22:54:38.671" endtime="20210705 22:54:38.672"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
 <arguments>
 <arg>${cpf}</arg>
 </arguments>
-<msg timestamp="20210628 23:07:39.515" level="INFO">${cpf} = 00000001406</msg>
-<status status="PASS" starttime="20210628 23:07:39.515" endtime="20210628 23:07:39.516"></status>
+<msg timestamp="20210705 22:54:38.672" level="INFO">${cpf} = 00000001406</msg>
+<status status="PASS" starttime="20210705 22:54:38.672" endtime="20210705 22:54:38.672"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
 <arguments>
 <arg>${address}</arg>
 </arguments>
-<msg timestamp="20210628 23:07:39.516" level="INFO">${address} = Rua dos Bugs, 1000</msg>
-<status status="PASS" starttime="20210628 23:07:39.516" endtime="20210628 23:07:39.516"></status>
+<msg timestamp="20210705 22:54:38.672" level="INFO">${address} = Rua dos Bugs, 1000</msg>
+<status status="PASS" starttime="20210705 22:54:38.672" endtime="20210705 22:54:38.672"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
 <arguments>
 <arg>${phone_number}</arg>
 </arguments>
-<msg timestamp="20210628 23:07:39.517" level="INFO">${phone_number} = 51999999999</msg>
-<status status="PASS" starttime="20210628 23:07:39.516" endtime="20210628 23:07:39.517"></status>
+<msg timestamp="20210705 22:54:38.673" level="INFO">${phone_number} = 51999999999</msg>
+<status status="PASS" starttime="20210705 22:54:38.673" endtime="20210705 22:54:38.673"></status>
 </kw>
-<status status="PASS" starttime="20210628 23:07:39.502" endtime="20210628 23:07:39.517"></status>
+<status status="PASS" starttime="20210705 22:54:38.656" endtime="20210705 22:54:38.673"></status>
 </kw>
 <kw name="Quando Faço A Inclusão Deste Cliente" library="kws">
 <kw name="Register New Customer" library="CustomersPage">
@@ -160,8 +163,8 @@
 <arg>id:name</arg>
 <arg>${name}</arg>
 </arguments>
-<msg timestamp="20210628 23:07:39.521" level="INFO">Typing text 'Bon Jovi' into text field 'id:name'.</msg>
-<status status="PASS" starttime="20210628 23:07:39.521" endtime="20210628 23:07:39.580"></status>
+<msg timestamp="20210705 22:54:38.675" level="INFO">Typing text 'Bon Jovi' into text field 'id:name'.</msg>
+<status status="PASS" starttime="20210705 22:54:38.675" endtime="20210705 22:54:38.744"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -169,8 +172,8 @@
 <arg>id:cpf</arg>
 <arg>${cpf}</arg>
 </arguments>
-<msg timestamp="20210628 23:07:39.581" level="INFO">Typing text '00000001406' into text field 'id:cpf'.</msg>
-<status status="PASS" starttime="20210628 23:07:39.581" endtime="20210628 23:07:39.655"></status>
+<msg timestamp="20210705 22:54:38.745" level="INFO">Typing text '00000001406' into text field 'id:cpf'.</msg>
+<status status="PASS" starttime="20210705 22:54:38.744" endtime="20210705 22:54:38.825"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -178,8 +181,8 @@
 <arg>id:address</arg>
 <arg>${address}</arg>
 </arguments>
-<msg timestamp="20210628 23:07:39.656" level="INFO">Typing text 'Rua dos Bugs, 1000' into text field 'id:address'.</msg>
-<status status="PASS" starttime="20210628 23:07:39.655" endtime="20210628 23:07:39.733"></status>
+<msg timestamp="20210705 22:54:38.825" level="INFO">Typing text 'Rua dos Bugs, 1000' into text field 'id:address'.</msg>
+<status status="PASS" starttime="20210705 22:54:38.825" endtime="20210705 22:54:38.925"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -187,20 +190,20 @@
 <arg>id:phone_number</arg>
 <arg>${phone_number}</arg>
 </arguments>
-<msg timestamp="20210628 23:07:39.735" level="INFO">Typing text '51999999999' into text field 'id:phone_number'.</msg>
-<status status="PASS" starttime="20210628 23:07:39.734" endtime="20210628 23:07:39.809"></status>
+<msg timestamp="20210705 22:54:38.926" level="INFO">Typing text '51999999999' into text field 'id:phone_number'.</msg>
+<status status="PASS" starttime="20210705 22:54:38.925" endtime="20210705 22:54:39.013"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath://button[text()='CADASTRAR']</arg>
 </arguments>
-<msg timestamp="20210628 23:07:39.809" level="INFO">Clicking element 'xpath://button[text()='CADASTRAR']'.</msg>
-<status status="PASS" starttime="20210628 23:07:39.809" endtime="20210628 23:07:39.847"></status>
+<msg timestamp="20210705 22:54:39.013" level="INFO">Clicking element 'xpath://button[text()='CADASTRAR']'.</msg>
+<status status="PASS" starttime="20210705 22:54:39.013" endtime="20210705 22:54:39.082"></status>
 </kw>
-<status status="PASS" starttime="20210628 23:07:39.520" endtime="20210628 23:07:39.847"></status>
+<status status="PASS" starttime="20210705 22:54:38.674" endtime="20210705 22:54:39.082"></status>
 </kw>
-<status status="PASS" starttime="20210628 23:07:39.518" endtime="20210628 23:07:39.848"></status>
+<status status="PASS" starttime="20210705 22:54:38.674" endtime="20210705 22:54:39.082"></status>
 </kw>
 <kw name="Então devo ver a notificação:" library="kws">
 <arguments>
@@ -213,1685 +216,71 @@
 <arg>${expect_notice}</arg>
 <arg>5</arg>
 </arguments>
-<status status="PASS" starttime="20210628 23:07:39.849" endtime="20210628 23:07:40.087"></status>
+<status status="PASS" starttime="20210705 22:54:39.084" endtime="20210705 22:54:39.349"></status>
 </kw>
-<status status="PASS" starttime="20210628 23:07:39.848" endtime="20210628 23:07:40.087"></status>
+<status status="PASS" starttime="20210705 22:54:39.083" endtime="20210705 22:54:39.349"></status>
 </kw>
-<status status="PASS" starttime="20210628 23:07:39.145" endtime="20210628 23:07:40.088" critical="yes"></status>
-</test>
-<test id="s1-s1-t2" name="Cliente duplicado">
-<kw name="Dado que acesso o formulário do cadastro de clientes" library="kws">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
+<kw name="E esse cliente deve ser exibido na lista" library="kws">
+<kw name="Format Cpf" library="db">
 <arguments>
-<arg>${NAV_CUSTOMERS}</arg>
-<arg>5</arg>
+<arg>${cpf}</arg>
 </arguments>
-<status status="PASS" starttime="20210628 23:07:40.090" endtime="20210628 23:07:40.102"></status>
+<assign>
+<var>${cpf_formatado}</var>
+</assign>
+<msg timestamp="20210705 22:54:39.350" level="INFO">${cpf_formatado} = 000.000.014-06</msg>
+<status status="PASS" starttime="20210705 22:54:39.350" endtime="20210705 22:54:39.350"></status>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${NAV_CUSTOMERS}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:40.103" level="INFO">Clicking element 'css:a[href$=customers]'.</msg>
-<status status="PASS" starttime="20210628 23:07:40.102" endtime="20210628 23:07:40.131"></status>
+<kw name="Go Back" library="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" starttime="20210705 22:54:39.351" endtime="20210705 22:54:39.361"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
-<arg>${CUSTOMER_FORM}</arg>
+<arg>${CUSTOMER_LIST}</arg>
 <arg>5</arg>
 </arguments>
-<status status="PASS" starttime="20210628 23:07:40.131" endtime="20210628 23:07:40.157"></status>
+<status status="PASS" starttime="20210705 22:54:39.362" endtime="20210705 22:54:39.388"></status>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<doc>Verifies table contains text ``expected``.</doc>
 <arguments>
-<arg>${CUSTOMER_FORM}</arg>
+<arg>${CUSTOMER_LIST}</arg>
+<arg>${cpf_formatado}</arg>
 </arguments>
-<msg timestamp="20210628 23:07:40.157" level="INFO">Clicking element 'css:a[href$=register]'.</msg>
-<status status="PASS" starttime="20210628 23:07:40.157" endtime="20210628 23:07:40.199"></status>
+<status status="PASS" starttime="20210705 22:54:39.388" endtime="20210705 22:54:39.518"></status>
 </kw>
-<status status="PASS" starttime="20210628 23:07:40.090" endtime="20210628 23:07:40.199"></status>
-</kw>
-<kw name="E que eu tenho o seguinte cliente:" library="kws">
-<arguments>
-<arg>Adrian Smith</arg>
-<arg>00000001441</arg>
-<arg>Rua dos Bugs, 2000</arg>
-<arg>11999999999</arg>
-</arguments>
-<kw name="Remove Customer By Cpf" library="db">
-<arguments>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:40.211" level="INFO">delete from public.customers where cpf = '000.000.014-41';</msg>
-<status status="PASS" starttime="20210628 23:07:40.201" endtime="20210628 23:07:40.211"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${name}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:40.212" level="INFO">${name} = Adrian Smith</msg>
-<status status="PASS" starttime="20210628 23:07:40.212" endtime="20210628 23:07:40.212"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:40.213" level="INFO">${cpf} = 00000001441</msg>
-<status status="PASS" starttime="20210628 23:07:40.212" endtime="20210628 23:07:40.213"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${address}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:40.213" level="INFO">${address} = Rua dos Bugs, 2000</msg>
-<status status="PASS" starttime="20210628 23:07:40.213" endtime="20210628 23:07:40.213"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${phone_number}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:40.214" level="INFO">${phone_number} = 11999999999</msg>
-<status status="PASS" starttime="20210628 23:07:40.214" endtime="20210628 23:07:40.214"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:40.200" endtime="20210628 23:07:40.214"></status>
-</kw>
-<kw name="Quando Faço A Inclusão Deste Cliente" library="kws">
-<kw name="Register New Customer" library="CustomersPage">
-<arguments>
-<arg>${name}</arg>
-<arg>${cpf}</arg>
-<arg>${address}</arg>
-<arg>${phone_number}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:name</arg>
-<arg>${name}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:40.215" level="INFO">Typing text 'Adrian Smith' into text field 'id:name'.</msg>
-<status status="PASS" starttime="20210628 23:07:40.215" endtime="20210628 23:07:40.279"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:cpf</arg>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:40.279" level="INFO">Typing text '00000001441' into text field 'id:cpf'.</msg>
-<status status="PASS" starttime="20210628 23:07:40.279" endtime="20210628 23:07:40.348"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:address</arg>
-<arg>${address}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:40.349" level="INFO">Typing text 'Rua dos Bugs, 2000' into text field 'id:address'.</msg>
-<status status="PASS" starttime="20210628 23:07:40.348" endtime="20210628 23:07:40.423"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:phone_number</arg>
-<arg>${phone_number}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:40.424" level="INFO">Typing text '11999999999' into text field 'id:phone_number'.</msg>
-<status status="PASS" starttime="20210628 23:07:40.424" endtime="20210628 23:07:40.491"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://button[text()='CADASTRAR']</arg>
-</arguments>
-<msg timestamp="20210628 23:07:40.492" level="INFO">Clicking element 'xpath://button[text()='CADASTRAR']'.</msg>
-<status status="PASS" starttime="20210628 23:07:40.492" endtime="20210628 23:07:40.527"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:40.215" endtime="20210628 23:07:40.527"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:40.215" endtime="20210628 23:07:40.527"></status>
-</kw>
-<kw name="Então devo ver a notificação de erro:" library="kws">
-<arguments>
-<arg>Este CPF já existe no sistema!</arg>
-</arguments>
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<arguments>
-<arg>${TOASTER_ERROR}</arg>
-<arg>${expect_notice}</arg>
-<arg>5</arg>
-</arguments>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210628 23:07:45.835" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-100.png"&gt;&lt;img src="selenium-screenshot-100.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210628 23:07:45.734" endtime="20210628 23:07:45.836"></status>
-</kw>
-<msg timestamp="20210628 23:07:45.837" level="FAIL">Element with locator 'css:div[type=error] strong' not found.</msg>
-<status status="FAIL" starttime="20210628 23:07:40.528" endtime="20210628 23:07:45.837"></status>
-</kw>
-<status status="FAIL" starttime="20210628 23:07:40.528" endtime="20210628 23:07:45.837"></status>
-</kw>
-<status status="FAIL" starttime="20210628 23:07:40.089" endtime="20210628 23:07:45.838" critical="yes">Element with locator 'css:div[type=error] strong' not found.</status>
-</test>
-<test id="s1-s1-t3" name="Campos Obrigatórios">
-<kw name="Dado que acesso o formulário do cadastro de clientes" library="kws">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${NAV_CUSTOMERS}</arg>
-<arg>5</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:07:45.842" endtime="20210628 23:07:45.856"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${NAV_CUSTOMERS}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:45.857" level="INFO">Clicking element 'css:a[href$=customers]'.</msg>
-<status status="PASS" starttime="20210628 23:07:45.856" endtime="20210628 23:07:45.890"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${CUSTOMER_FORM}</arg>
-<arg>5</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:07:45.890" endtime="20210628 23:07:45.910"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${CUSTOMER_FORM}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:45.911" level="INFO">Clicking element 'css:a[href$=register]'.</msg>
-<status status="PASS" starttime="20210628 23:07:45.910" endtime="20210628 23:07:45.954"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:45.842" endtime="20210628 23:07:45.955"></status>
-</kw>
-<kw name="E que eu tenho o seguinte cliente:" library="kws">
-<arguments>
-<arg>${EMPTY}</arg>
-<arg>${EMPTY}</arg>
-<arg>${EMPTY}</arg>
-<arg>${EMPTY}</arg>
-</arguments>
-<kw name="Remove Customer By Cpf" library="db">
-<arguments>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:45.972" level="INFO">delete from public.customers where cpf = '..-';</msg>
-<status status="PASS" starttime="20210628 23:07:45.955" endtime="20210628 23:07:45.972"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${name}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:45.972" level="INFO">${name} = </msg>
-<status status="PASS" starttime="20210628 23:07:45.972" endtime="20210628 23:07:45.973"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:45.973" level="INFO">${cpf} = </msg>
-<status status="PASS" starttime="20210628 23:07:45.973" endtime="20210628 23:07:45.973"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${address}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:45.973" level="INFO">${address} = </msg>
-<status status="PASS" starttime="20210628 23:07:45.973" endtime="20210628 23:07:45.973"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${phone_number}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:45.974" level="INFO">${phone_number} = </msg>
-<status status="PASS" starttime="20210628 23:07:45.973" endtime="20210628 23:07:45.974"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:45.955" endtime="20210628 23:07:45.974"></status>
-</kw>
-<kw name="Quando Faço A Inclusão Deste Cliente" library="kws">
-<kw name="Register New Customer" library="CustomersPage">
-<arguments>
-<arg>${name}</arg>
-<arg>${cpf}</arg>
-<arg>${address}</arg>
-<arg>${phone_number}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:name</arg>
-<arg>${name}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:45.976" level="INFO">Typing text '' into text field 'id:name'.</msg>
-<status status="PASS" starttime="20210628 23:07:45.976" endtime="20210628 23:07:46.026"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:cpf</arg>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:46.026" level="INFO">Typing text '' into text field 'id:cpf'.</msg>
-<status status="PASS" starttime="20210628 23:07:46.026" endtime="20210628 23:07:46.090"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:address</arg>
-<arg>${address}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:46.091" level="INFO">Typing text '' into text field 'id:address'.</msg>
-<status status="PASS" starttime="20210628 23:07:46.090" endtime="20210628 23:07:46.154"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:phone_number</arg>
-<arg>${phone_number}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:46.154" level="INFO">Typing text '' into text field 'id:phone_number'.</msg>
-<status status="PASS" starttime="20210628 23:07:46.154" endtime="20210628 23:07:46.217"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://button[text()='CADASTRAR']</arg>
-</arguments>
-<msg timestamp="20210628 23:07:46.217" level="INFO">Clicking element 'xpath://button[text()='CADASTRAR']'.</msg>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210628 23:07:47.372" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-101.png"&gt;&lt;img src="selenium-screenshot-101.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210628 23:07:47.256" endtime="20210628 23:07:47.372"></status>
-</kw>
-<msg timestamp="20210628 23:07:47.374" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="button" class="sc-AxheI cGQymO"&gt;...&lt;/button&gt; is not clickable at point (1052, 116). Other element would receive the click: &lt;strong&gt;...&lt;/strong&gt;
-  (Session info: chrome=91.0.4472.124)
-</msg>
-<status status="FAIL" starttime="20210628 23:07:46.217" endtime="20210628 23:07:47.374"></status>
-</kw>
-<status status="FAIL" starttime="20210628 23:07:45.975" endtime="20210628 23:07:47.375"></status>
-</kw>
-<status status="FAIL" starttime="20210628 23:07:45.975" endtime="20210628 23:07:47.375"></status>
-</kw>
-<status status="FAIL" starttime="20210628 23:07:45.841" endtime="20210628 23:07:47.376" critical="yes">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="button" class="sc-AxheI cGQymO"&gt;...&lt;/button&gt; is not clickable at point (1052, 116). Other element would receive the click: &lt;strong&gt;...&lt;/strong&gt;
-  (Session info: chrome=91.0.4472.124)
-</status>
-</test>
-<test id="s1-s1-t4" name="Nome é Obrigatório">
-<kw name="Validação de Campos">
-<arguments>
-<arg>${EMPTY}</arg>
-<arg>53695887087</arg>
-<arg>Rua dos Bugs, 1000</arg>
-<arg>11999999999</arg>
-<arg>Nome é obrigatório</arg>
-</arguments>
-<kw name="Dado que acesso o formulário do cadastro de clientes" library="kws">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${NAV_CUSTOMERS}</arg>
-<arg>5</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:07:47.380" endtime="20210628 23:07:47.395"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${NAV_CUSTOMERS}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:47.395" level="INFO">Clicking element 'css:a[href$=customers]'.</msg>
-<status status="PASS" starttime="20210628 23:07:47.395" endtime="20210628 23:07:47.425"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${CUSTOMER_FORM}</arg>
-<arg>5</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:07:47.425" endtime="20210628 23:07:47.445"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${CUSTOMER_FORM}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:47.446" level="INFO">Clicking element 'css:a[href$=register]'.</msg>
-<status status="PASS" starttime="20210628 23:07:47.445" endtime="20210628 23:07:47.490"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:47.380" endtime="20210628 23:07:47.491"></status>
-</kw>
-<kw name="E que eu tenho o seguinte cliente:" library="kws">
-<arguments>
-<arg>${nome}</arg>
-<arg>${cpf}</arg>
-<arg>${endereco}</arg>
-<arg>${telefone}</arg>
-</arguments>
-<kw name="Remove Customer By Cpf" library="db">
-<arguments>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:47.513" level="INFO">delete from public.customers where cpf = '536.958.870-87';</msg>
-<status status="PASS" starttime="20210628 23:07:47.492" endtime="20210628 23:07:47.513"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${name}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:47.514" level="INFO">${name} = </msg>
-<status status="PASS" starttime="20210628 23:07:47.513" endtime="20210628 23:07:47.514"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:47.514" level="INFO">${cpf} = 53695887087</msg>
-<status status="PASS" starttime="20210628 23:07:47.514" endtime="20210628 23:07:47.515"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${address}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:47.515" level="INFO">${address} = Rua dos Bugs, 1000</msg>
-<status status="PASS" starttime="20210628 23:07:47.515" endtime="20210628 23:07:47.515"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${phone_number}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:47.516" level="INFO">${phone_number} = 11999999999</msg>
-<status status="PASS" starttime="20210628 23:07:47.515" endtime="20210628 23:07:47.516"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:47.491" endtime="20210628 23:07:47.516"></status>
-</kw>
-<kw name="Quando Faço A Inclusão Deste Cliente" library="kws">
-<kw name="Register New Customer" library="CustomersPage">
-<arguments>
-<arg>${name}</arg>
-<arg>${cpf}</arg>
-<arg>${address}</arg>
-<arg>${phone_number}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:name</arg>
-<arg>${name}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:47.519" level="INFO">Typing text '' into text field 'id:name'.</msg>
-<status status="PASS" starttime="20210628 23:07:47.518" endtime="20210628 23:07:47.572"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:cpf</arg>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:47.573" level="INFO">Typing text '53695887087' into text field 'id:cpf'.</msg>
-<status status="PASS" starttime="20210628 23:07:47.572" endtime="20210628 23:07:47.646"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:address</arg>
-<arg>${address}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:47.646" level="INFO">Typing text 'Rua dos Bugs, 1000' into text field 'id:address'.</msg>
-<status status="PASS" starttime="20210628 23:07:47.646" endtime="20210628 23:07:47.718"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:phone_number</arg>
-<arg>${phone_number}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:47.719" level="INFO">Typing text '11999999999' into text field 'id:phone_number'.</msg>
-<status status="PASS" starttime="20210628 23:07:47.718" endtime="20210628 23:07:47.791"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://button[text()='CADASTRAR']</arg>
-</arguments>
-<msg timestamp="20210628 23:07:47.791" level="INFO">Clicking element 'xpath://button[text()='CADASTRAR']'.</msg>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210628 23:07:48.957" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-102.png"&gt;&lt;img src="selenium-screenshot-102.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210628 23:07:48.847" endtime="20210628 23:07:48.957"></status>
-</kw>
-<msg timestamp="20210628 23:07:48.958" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="button" class="sc-AxheI cGQymO"&gt;...&lt;/button&gt; is not clickable at point (1052, 116). Other element would receive the click: &lt;strong&gt;...&lt;/strong&gt;
-  (Session info: chrome=91.0.4472.124)
-</msg>
-<status status="FAIL" starttime="20210628 23:07:47.791" endtime="20210628 23:07:48.958"></status>
-</kw>
-<status status="FAIL" starttime="20210628 23:07:47.517" endtime="20210628 23:07:48.958"></status>
-</kw>
-<status status="FAIL" starttime="20210628 23:07:47.516" endtime="20210628 23:07:48.959"></status>
-</kw>
-<status status="FAIL" starttime="20210628 23:07:47.380" endtime="20210628 23:07:48.959"></status>
+<status status="PASS" starttime="20210705 22:54:39.350" endtime="20210705 22:54:39.518"></status>
 </kw>
 <tags>
-<tag>required</tag>
+<tag>Smoke</tag>
 </tags>
-<status status="FAIL" starttime="20210628 23:07:47.379" endtime="20210628 23:07:48.960" critical="yes">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="button" class="sc-AxheI cGQymO"&gt;...&lt;/button&gt; is not clickable at point (1052, 116). Other element would receive the click: &lt;strong&gt;...&lt;/strong&gt;
-  (Session info: chrome=91.0.4472.124)
-</status>
-</test>
-<test id="s1-s1-t5" name="CPF é Obrigatório">
-<kw name="Validação de Campos">
-<arguments>
-<arg>Calebe Gael</arg>
-<arg>${EMPTY}</arg>
-<arg>Rua dos Bugs, 1000</arg>
-<arg>11999999999</arg>
-<arg>CPF é obrigatório</arg>
-</arguments>
-<kw name="Dado que acesso o formulário do cadastro de clientes" library="kws">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${NAV_CUSTOMERS}</arg>
-<arg>5</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:07:48.964" endtime="20210628 23:07:48.976"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${NAV_CUSTOMERS}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:48.977" level="INFO">Clicking element 'css:a[href$=customers]'.</msg>
-<status status="PASS" starttime="20210628 23:07:48.976" endtime="20210628 23:07:49.011"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${CUSTOMER_FORM}</arg>
-<arg>5</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:07:49.011" endtime="20210628 23:07:49.030"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${CUSTOMER_FORM}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:49.030" level="INFO">Clicking element 'css:a[href$=register]'.</msg>
-<status status="PASS" starttime="20210628 23:07:49.030" endtime="20210628 23:07:49.071"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:48.964" endtime="20210628 23:07:49.071"></status>
-</kw>
-<kw name="E que eu tenho o seguinte cliente:" library="kws">
-<arguments>
-<arg>${nome}</arg>
-<arg>${cpf}</arg>
-<arg>${endereco}</arg>
-<arg>${telefone}</arg>
-</arguments>
-<kw name="Remove Customer By Cpf" library="db">
-<arguments>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:49.079" level="INFO">delete from public.customers where cpf = '..-';</msg>
-<status status="PASS" starttime="20210628 23:07:49.072" endtime="20210628 23:07:49.079"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${name}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:49.079" level="INFO">${name} = Calebe Gael</msg>
-<status status="PASS" starttime="20210628 23:07:49.079" endtime="20210628 23:07:49.079"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:49.080" level="INFO">${cpf} = </msg>
-<status status="PASS" starttime="20210628 23:07:49.079" endtime="20210628 23:07:49.080"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${address}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:49.080" level="INFO">${address} = Rua dos Bugs, 1000</msg>
-<status status="PASS" starttime="20210628 23:07:49.080" endtime="20210628 23:07:49.080"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${phone_number}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:49.081" level="INFO">${phone_number} = 11999999999</msg>
-<status status="PASS" starttime="20210628 23:07:49.080" endtime="20210628 23:07:49.081"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:49.071" endtime="20210628 23:07:49.081"></status>
-</kw>
-<kw name="Quando Faço A Inclusão Deste Cliente" library="kws">
-<kw name="Register New Customer" library="CustomersPage">
-<arguments>
-<arg>${name}</arg>
-<arg>${cpf}</arg>
-<arg>${address}</arg>
-<arg>${phone_number}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:name</arg>
-<arg>${name}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:49.083" level="INFO">Typing text 'Calebe Gael' into text field 'id:name'.</msg>
-<status status="PASS" starttime="20210628 23:07:49.083" endtime="20210628 23:07:49.144"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:cpf</arg>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:49.144" level="INFO">Typing text '' into text field 'id:cpf'.</msg>
-<status status="PASS" starttime="20210628 23:07:49.144" endtime="20210628 23:07:49.209"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:address</arg>
-<arg>${address}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:49.210" level="INFO">Typing text 'Rua dos Bugs, 1000' into text field 'id:address'.</msg>
-<status status="PASS" starttime="20210628 23:07:49.209" endtime="20210628 23:07:49.282"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:phone_number</arg>
-<arg>${phone_number}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:49.282" level="INFO">Typing text '11999999999' into text field 'id:phone_number'.</msg>
-<status status="PASS" starttime="20210628 23:07:49.282" endtime="20210628 23:07:49.356"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://button[text()='CADASTRAR']</arg>
-</arguments>
-<msg timestamp="20210628 23:07:49.356" level="INFO">Clicking element 'xpath://button[text()='CADASTRAR']'.</msg>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210628 23:07:50.527" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-103.png"&gt;&lt;img src="selenium-screenshot-103.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210628 23:07:50.398" endtime="20210628 23:07:50.527"></status>
-</kw>
-<msg timestamp="20210628 23:07:50.528" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="button" class="sc-AxheI cGQymO"&gt;...&lt;/button&gt; is not clickable at point (1052, 116). Other element would receive the click: &lt;strong&gt;...&lt;/strong&gt;
-  (Session info: chrome=91.0.4472.124)
-</msg>
-<status status="FAIL" starttime="20210628 23:07:49.356" endtime="20210628 23:07:50.528"></status>
-</kw>
-<status status="FAIL" starttime="20210628 23:07:49.082" endtime="20210628 23:07:50.528"></status>
-</kw>
-<status status="FAIL" starttime="20210628 23:07:49.081" endtime="20210628 23:07:50.528"></status>
-</kw>
-<status status="FAIL" starttime="20210628 23:07:48.963" endtime="20210628 23:07:50.528"></status>
-</kw>
-<tags>
-<tag>required</tag>
-</tags>
-<status status="FAIL" starttime="20210628 23:07:48.963" endtime="20210628 23:07:50.530" critical="yes">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="button" class="sc-AxheI cGQymO"&gt;...&lt;/button&gt; is not clickable at point (1052, 116). Other element would receive the click: &lt;strong&gt;...&lt;/strong&gt;
-  (Session info: chrome=91.0.4472.124)
-</status>
-</test>
-<test id="s1-s1-t6" name="Endereço é Obrigatório">
-<kw name="Validação de Campos">
-<arguments>
-<arg>Calebe Gael</arg>
-<arg>53695887087</arg>
-<arg>${EMPTY}</arg>
-<arg>11999999999</arg>
-<arg>Endereço é obrigatório</arg>
-</arguments>
-<kw name="Dado que acesso o formulário do cadastro de clientes" library="kws">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${NAV_CUSTOMERS}</arg>
-<arg>5</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:07:50.535" endtime="20210628 23:07:50.551"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${NAV_CUSTOMERS}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:50.551" level="INFO">Clicking element 'css:a[href$=customers]'.</msg>
-<status status="PASS" starttime="20210628 23:07:50.551" endtime="20210628 23:07:50.581"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${CUSTOMER_FORM}</arg>
-<arg>5</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:07:50.581" endtime="20210628 23:07:50.601"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${CUSTOMER_FORM}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:50.601" level="INFO">Clicking element 'css:a[href$=register]'.</msg>
-<status status="PASS" starttime="20210628 23:07:50.601" endtime="20210628 23:07:50.643"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:50.534" endtime="20210628 23:07:50.643"></status>
-</kw>
-<kw name="E que eu tenho o seguinte cliente:" library="kws">
-<arguments>
-<arg>${nome}</arg>
-<arg>${cpf}</arg>
-<arg>${endereco}</arg>
-<arg>${telefone}</arg>
-</arguments>
-<kw name="Remove Customer By Cpf" library="db">
-<arguments>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:50.660" level="INFO">delete from public.customers where cpf = '536.958.870-87';</msg>
-<status status="PASS" starttime="20210628 23:07:50.644" endtime="20210628 23:07:50.660"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${name}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:50.661" level="INFO">${name} = Calebe Gael</msg>
-<status status="PASS" starttime="20210628 23:07:50.661" endtime="20210628 23:07:50.661"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:50.661" level="INFO">${cpf} = 53695887087</msg>
-<status status="PASS" starttime="20210628 23:07:50.661" endtime="20210628 23:07:50.661"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${address}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:50.662" level="INFO">${address} = </msg>
-<status status="PASS" starttime="20210628 23:07:50.662" endtime="20210628 23:07:50.662"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${phone_number}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:50.662" level="INFO">${phone_number} = 11999999999</msg>
-<status status="PASS" starttime="20210628 23:07:50.662" endtime="20210628 23:07:50.662"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:50.643" endtime="20210628 23:07:50.662"></status>
-</kw>
-<kw name="Quando Faço A Inclusão Deste Cliente" library="kws">
-<kw name="Register New Customer" library="CustomersPage">
-<arguments>
-<arg>${name}</arg>
-<arg>${cpf}</arg>
-<arg>${address}</arg>
-<arg>${phone_number}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:name</arg>
-<arg>${name}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:50.664" level="INFO">Typing text 'Calebe Gael' into text field 'id:name'.</msg>
-<status status="PASS" starttime="20210628 23:07:50.663" endtime="20210628 23:07:50.725"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:cpf</arg>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:50.726" level="INFO">Typing text '53695887087' into text field 'id:cpf'.</msg>
-<status status="PASS" starttime="20210628 23:07:50.725" endtime="20210628 23:07:50.798"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:address</arg>
-<arg>${address}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:50.798" level="INFO">Typing text '' into text field 'id:address'.</msg>
-<status status="PASS" starttime="20210628 23:07:50.798" endtime="20210628 23:07:50.861"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:phone_number</arg>
-<arg>${phone_number}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:50.862" level="INFO">Typing text '11999999999' into text field 'id:phone_number'.</msg>
-<status status="PASS" starttime="20210628 23:07:50.862" endtime="20210628 23:07:50.930"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://button[text()='CADASTRAR']</arg>
-</arguments>
-<msg timestamp="20210628 23:07:50.931" level="INFO">Clicking element 'xpath://button[text()='CADASTRAR']'.</msg>
-<status status="PASS" starttime="20210628 23:07:50.930" endtime="20210628 23:07:50.971"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:50.663" endtime="20210628 23:07:50.971"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:50.663" endtime="20210628 23:07:50.971"></status>
-</kw>
-<kw name="Então Devo Ver O Texto:" library="kws">
-<arguments>
-<arg>${saida}</arg>
-</arguments>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>${expect_text}</arg>
-<arg>500</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:07:50.972" endtime="20210628 23:07:50.983"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:50.971" endtime="20210628 23:07:50.983"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:50.534" endtime="20210628 23:07:50.984"></status>
-</kw>
-<tags>
-<tag>required</tag>
-</tags>
-<status status="PASS" starttime="20210628 23:07:50.533" endtime="20210628 23:07:50.985" critical="yes"></status>
-</test>
-<test id="s1-s1-t7" name="Telefone incorreto">
-<kw name="Validação de Campos">
-<arguments>
-<arg>João da Silva</arg>
-<arg>0000001406</arg>
-<arg>Rua dos Bugs, 1000</arg>
-<arg>119999999</arg>
-<arg>Telefone inválido</arg>
-</arguments>
-<kw name="Dado que acesso o formulário do cadastro de clientes" library="kws">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${NAV_CUSTOMERS}</arg>
-<arg>5</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:07:50.989" endtime="20210628 23:07:51.003"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${NAV_CUSTOMERS}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.004" level="INFO">Clicking element 'css:a[href$=customers]'.</msg>
-<status status="PASS" starttime="20210628 23:07:51.003" endtime="20210628 23:07:51.032"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${CUSTOMER_FORM}</arg>
-<arg>5</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:07:51.032" endtime="20210628 23:07:51.050"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${CUSTOMER_FORM}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.051" level="INFO">Clicking element 'css:a[href$=register]'.</msg>
-<status status="PASS" starttime="20210628 23:07:51.051" endtime="20210628 23:07:51.092"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:50.988" endtime="20210628 23:07:51.092"></status>
-</kw>
-<kw name="E que eu tenho o seguinte cliente:" library="kws">
-<arguments>
-<arg>${nome}</arg>
-<arg>${cpf}</arg>
-<arg>${endereco}</arg>
-<arg>${telefone}</arg>
-</arguments>
-<kw name="Remove Customer By Cpf" library="db">
-<arguments>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.098" level="INFO">delete from public.customers where cpf = '000.000.140-6';</msg>
-<status status="PASS" starttime="20210628 23:07:51.093" endtime="20210628 23:07:51.098"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${name}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.098" level="INFO">${name} = João da Silva</msg>
-<status status="PASS" starttime="20210628 23:07:51.098" endtime="20210628 23:07:51.099"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.099" level="INFO">${cpf} = 0000001406</msg>
-<status status="PASS" starttime="20210628 23:07:51.099" endtime="20210628 23:07:51.099"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${address}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.100" level="INFO">${address} = Rua dos Bugs, 1000</msg>
-<status status="PASS" starttime="20210628 23:07:51.099" endtime="20210628 23:07:51.100"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${phone_number}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.101" level="INFO">${phone_number} = 119999999</msg>
-<status status="PASS" starttime="20210628 23:07:51.100" endtime="20210628 23:07:51.101"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:51.092" endtime="20210628 23:07:51.101"></status>
-</kw>
-<kw name="Quando Faço A Inclusão Deste Cliente" library="kws">
-<kw name="Register New Customer" library="CustomersPage">
-<arguments>
-<arg>${name}</arg>
-<arg>${cpf}</arg>
-<arg>${address}</arg>
-<arg>${phone_number}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:name</arg>
-<arg>${name}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.104" level="INFO">Typing text 'João da Silva' into text field 'id:name'.</msg>
-<status status="PASS" starttime="20210628 23:07:51.103" endtime="20210628 23:07:51.168"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:cpf</arg>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.169" level="INFO">Typing text '0000001406' into text field 'id:cpf'.</msg>
-<status status="PASS" starttime="20210628 23:07:51.168" endtime="20210628 23:07:51.244"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:address</arg>
-<arg>${address}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.244" level="INFO">Typing text 'Rua dos Bugs, 1000' into text field 'id:address'.</msg>
-<status status="PASS" starttime="20210628 23:07:51.244" endtime="20210628 23:07:51.315"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:phone_number</arg>
-<arg>${phone_number}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.316" level="INFO">Typing text '119999999' into text field 'id:phone_number'.</msg>
-<status status="PASS" starttime="20210628 23:07:51.315" endtime="20210628 23:07:51.386"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://button[text()='CADASTRAR']</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.387" level="INFO">Clicking element 'xpath://button[text()='CADASTRAR']'.</msg>
-<status status="PASS" starttime="20210628 23:07:51.387" endtime="20210628 23:07:51.426"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:51.102" endtime="20210628 23:07:51.426"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:51.101" endtime="20210628 23:07:51.426"></status>
-</kw>
-<kw name="Então Devo Ver O Texto:" library="kws">
-<arguments>
-<arg>${saida}</arg>
-</arguments>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>${expect_text}</arg>
-<arg>500</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:07:51.427" endtime="20210628 23:07:51.437"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:51.426" endtime="20210628 23:07:51.437"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:50.988" endtime="20210628 23:07:51.437"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:50.987" endtime="20210628 23:07:51.438" critical="yes"></status>
-</test>
-<test id="s1-s1-t8" name="Telefone é Obrigatório">
-<kw name="Validação de Campos">
-<arguments>
-<arg>Calebe Gael</arg>
-<arg>53695887087</arg>
-<arg>Rua dos Bugs, 1000</arg>
-<arg>${EMPTY}</arg>
-<arg>Telefone é obrigatório</arg>
-</arguments>
-<kw name="Dado que acesso o formulário do cadastro de clientes" library="kws">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${NAV_CUSTOMERS}</arg>
-<arg>5</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:07:51.442" endtime="20210628 23:07:51.454"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${NAV_CUSTOMERS}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.455" level="INFO">Clicking element 'css:a[href$=customers]'.</msg>
-<status status="PASS" starttime="20210628 23:07:51.455" endtime="20210628 23:07:51.481"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${CUSTOMER_FORM}</arg>
-<arg>5</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:07:51.481" endtime="20210628 23:07:51.506"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${CUSTOMER_FORM}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.506" level="INFO">Clicking element 'css:a[href$=register]'.</msg>
-<status status="PASS" starttime="20210628 23:07:51.506" endtime="20210628 23:07:51.542"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:51.441" endtime="20210628 23:07:51.543"></status>
-</kw>
-<kw name="E que eu tenho o seguinte cliente:" library="kws">
-<arguments>
-<arg>${nome}</arg>
-<arg>${cpf}</arg>
-<arg>${endereco}</arg>
-<arg>${telefone}</arg>
-</arguments>
-<kw name="Remove Customer By Cpf" library="db">
-<arguments>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.548" level="INFO">delete from public.customers where cpf = '536.958.870-87';</msg>
-<status status="PASS" starttime="20210628 23:07:51.543" endtime="20210628 23:07:51.549"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${name}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.549" level="INFO">${name} = Calebe Gael</msg>
-<status status="PASS" starttime="20210628 23:07:51.549" endtime="20210628 23:07:51.550"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.550" level="INFO">${cpf} = 53695887087</msg>
-<status status="PASS" starttime="20210628 23:07:51.550" endtime="20210628 23:07:51.550"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${address}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.551" level="INFO">${address} = Rua dos Bugs, 1000</msg>
-<status status="PASS" starttime="20210628 23:07:51.551" endtime="20210628 23:07:51.551"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${phone_number}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.553" level="INFO">${phone_number} = </msg>
-<status status="PASS" starttime="20210628 23:07:51.552" endtime="20210628 23:07:51.554"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:51.543" endtime="20210628 23:07:51.554"></status>
-</kw>
-<kw name="Quando Faço A Inclusão Deste Cliente" library="kws">
-<kw name="Register New Customer" library="CustomersPage">
-<arguments>
-<arg>${name}</arg>
-<arg>${cpf}</arg>
-<arg>${address}</arg>
-<arg>${phone_number}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:name</arg>
-<arg>${name}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.555" level="INFO">Typing text 'Calebe Gael' into text field 'id:name'.</msg>
-<status status="PASS" starttime="20210628 23:07:51.555" endtime="20210628 23:07:51.615"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:cpf</arg>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.616" level="INFO">Typing text '53695887087' into text field 'id:cpf'.</msg>
-<status status="PASS" starttime="20210628 23:07:51.615" endtime="20210628 23:07:51.688"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:address</arg>
-<arg>${address}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.689" level="INFO">Typing text 'Rua dos Bugs, 1000' into text field 'id:address'.</msg>
-<status status="PASS" starttime="20210628 23:07:51.689" endtime="20210628 23:07:51.762"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:phone_number</arg>
-<arg>${phone_number}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.763" level="INFO">Typing text '' into text field 'id:phone_number'.</msg>
-<status status="PASS" starttime="20210628 23:07:51.762" endtime="20210628 23:07:51.830"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://button[text()='CADASTRAR']</arg>
-</arguments>
-<msg timestamp="20210628 23:07:51.830" level="INFO">Clicking element 'xpath://button[text()='CADASTRAR']'.</msg>
-<status status="PASS" starttime="20210628 23:07:51.830" endtime="20210628 23:07:51.864"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:51.554" endtime="20210628 23:07:51.864"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:51.554" endtime="20210628 23:07:51.864"></status>
-</kw>
-<kw name="Então Devo Ver O Texto:" library="kws">
-<arguments>
-<arg>${saida}</arg>
-</arguments>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>${expect_text}</arg>
-<arg>500</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:07:51.865" endtime="20210628 23:07:51.874"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:51.864" endtime="20210628 23:07:51.875"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:51.441" endtime="20210628 23:07:51.875"></status>
-</kw>
-<tags>
-<tag>required</tag>
-</tags>
-<status status="PASS" starttime="20210628 23:07:51.440" endtime="20210628 23:07:51.875" critical="yes"></status>
+<status status="PASS" starttime="20210705 22:54:38.311" endtime="20210705 22:54:39.518" critical="yes"></status>
 </test>
 <kw name="Finish Session" library="hooks" type="teardown">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210628 23:07:51.878" endtime="20210628 23:07:54.008"></status>
+<status status="PASS" starttime="20210705 22:54:39.520" endtime="20210705 22:54:41.784"></status>
 </kw>
-<status status="PASS" starttime="20210628 23:07:51.878" endtime="20210628 23:07:54.008"></status>
+<status status="PASS" starttime="20210705 22:54:39.520" endtime="20210705 22:54:41.784"></status>
 </kw>
 <doc>Cadastro de clientes</doc>
-<status status="FAIL" starttime="20210628 23:07:35.180" endtime="20210628 23:07:54.008"></status>
+<status status="PASS" starttime="20210705 22:54:34.205" endtime="20210705 22:54:41.784"></status>
 </suite>
-<suite id="s1-s2" name="Login" source="c:\qaninja\ze-palheta\tests\login.robot">
-<test id="s1-s2-t1" name="Login do Administrador">
-<kw name="Start Session" library="hooks" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<arguments>
-<arg>about:blank</arg>
-<arg>chrome</arg>
-</arguments>
-<msg timestamp="20210628 23:07:54.026" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20210628 23:07:54.026" endtime="20210628 23:07:55.420"></status>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210628 23:07:55.421" endtime="20210628 23:07:55.530"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:54.025" endtime="20210628 23:07:55.530"></status>
-</kw>
-<kw name="Acesso a página Login" library="kws">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${base_url}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:55.531" level="INFO">Opening url 'http://zepalheta-web:3000'</msg>
-<status status="PASS" starttime="20210628 23:07:55.531" endtime="20210628 23:07:57.248"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:55.531" endtime="20210628 23:07:57.248"></status>
-</kw>
-<kw name="Submeto minhas credenciais" library="kws">
-<arguments>
-<arg>admin@zepalheta.com.br</arg>
-<arg>pwd123</arg>
-</arguments>
-<kw name="Login With" library="LoginPage">
-<arguments>
-<arg>${email}</arg>
-<arg>${password}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:txtEmail</arg>
-<arg>${email}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:57.254" level="INFO">Typing text 'admin@zepalheta.com.br' into text field 'id:txtEmail'.</msg>
-<status status="PASS" starttime="20210628 23:07:57.254" endtime="20210628 23:07:57.624"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>css:input[placeholder=Senha]</arg>
-<arg>${password}</arg>
-</arguments>
-<msg timestamp="20210628 23:07:57.624" level="INFO">Typing text 'pwd123' into text field 'css:input[placeholder=Senha]'.</msg>
-<status status="PASS" starttime="20210628 23:07:57.624" endtime="20210628 23:07:57.724"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://button[text()='Entrar']</arg>
-</arguments>
-<msg timestamp="20210628 23:07:57.724" level="INFO">Clicking element 'xpath://button[text()='Entrar']'.</msg>
-<status status="PASS" starttime="20210628 23:07:57.724" endtime="20210628 23:07:57.784"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:57.252" endtime="20210628 23:07:57.784"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:57.250" endtime="20210628 23:07:57.784"></status>
-</kw>
-<kw name="Devo ver a área logada" library="kws">
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>Aluguéis</arg>
-<arg>10</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:07:57.785" endtime="20210628 23:07:58.004"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:57.785" endtime="20210628 23:07:58.004"></status>
-</kw>
-<kw name="Finish Session" library="hooks" type="teardown">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210628 23:07:58.006" endtime="20210628 23:08:00.178"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:58.005" endtime="20210628 23:08:00.178"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:07:54.024" endtime="20210628 23:08:00.179" critical="yes"></status>
-</test>
-<doc>Login</doc>
-<status status="PASS" starttime="20210628 23:07:54.013" endtime="20210628 23:08:00.182"></status>
-</suite>
-<suite id="s1-s3" name="Login Tentativa" source="c:\qaninja\ze-palheta\tests\login_tentativa.robot">
-<kw name="Start Session" library="hooks" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<arguments>
-<arg>about:blank</arg>
-<arg>chrome</arg>
-</arguments>
-<msg timestamp="20210628 23:08:00.196" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20210628 23:08:00.196" endtime="20210628 23:08:01.586"></status>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210628 23:08:01.586" endtime="20210628 23:08:01.701"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:00.196" endtime="20210628 23:08:01.702"></status>
-</kw>
-<test id="s1-s3-t1" name="Senha incorreta">
-<kw name="Tentativa de login">
-<arguments>
-<arg>admin@zepalheta.com.br</arg>
-<arg>abc123</arg>
-<arg>Ocorreu um erro ao fazer login, cheque as credenciais.</arg>
-</arguments>
-<kw name="Acesso a página Login" library="kws">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${base_url}</arg>
-</arguments>
-<msg timestamp="20210628 23:08:01.714" level="INFO">Opening url 'http://zepalheta-web:3000'</msg>
-<status status="PASS" starttime="20210628 23:08:01.713" endtime="20210628 23:08:03.189"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:01.710" endtime="20210628 23:08:03.189"></status>
-</kw>
-<kw name="Submeto minhas credenciais" library="kws">
-<arguments>
-<arg>${input_email}</arg>
-<arg>${input_senha}</arg>
-</arguments>
-<kw name="Login With" library="LoginPage">
-<arguments>
-<arg>${email}</arg>
-<arg>${password}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:txtEmail</arg>
-<arg>${email}</arg>
-</arguments>
-<msg timestamp="20210628 23:08:03.190" level="INFO">Typing text 'admin@zepalheta.com.br' into text field 'id:txtEmail'.</msg>
-<status status="PASS" starttime="20210628 23:08:03.190" endtime="20210628 23:08:03.552"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>css:input[placeholder=Senha]</arg>
-<arg>${password}</arg>
-</arguments>
-<msg timestamp="20210628 23:08:03.553" level="INFO">Typing text 'abc123' into text field 'css:input[placeholder=Senha]'.</msg>
-<status status="PASS" starttime="20210628 23:08:03.553" endtime="20210628 23:08:03.646"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://button[text()='Entrar']</arg>
-</arguments>
-<msg timestamp="20210628 23:08:03.646" level="INFO">Clicking element 'xpath://button[text()='Entrar']'.</msg>
-<status status="PASS" starttime="20210628 23:08:03.646" endtime="20210628 23:08:03.699"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:03.190" endtime="20210628 23:08:03.700"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:03.189" endtime="20210628 23:08:03.700"></status>
-</kw>
-<kw name="Devo ver um toaster com a mensagem" library="kws">
-<arguments>
-<arg>${output_mensagem}</arg>
-</arguments>
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<arguments>
-<arg>${TOASTER_ERROR_P}</arg>
-<arg>${expect_message}</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:08:03.701" endtime="20210628 23:08:04.139"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:03.700" endtime="20210628 23:08:04.139"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:01.707" endtime="20210628 23:08:04.139"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:01.702" endtime="20210628 23:08:04.140" critical="yes"></status>
-</test>
-<test id="s1-s3-t2" name="Senha em branco">
-<kw name="Tentativa de login">
-<arguments>
-<arg>joao@gmail.com</arg>
-<arg>${EMPTY}</arg>
-<arg>O campo senha é obrigatório!</arg>
-</arguments>
-<kw name="Acesso a página Login" library="kws">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${base_url}</arg>
-</arguments>
-<msg timestamp="20210628 23:08:04.143" level="INFO">Opening url 'http://zepalheta-web:3000'</msg>
-<status status="PASS" starttime="20210628 23:08:04.143" endtime="20210628 23:08:04.508"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:04.143" endtime="20210628 23:08:04.508"></status>
-</kw>
-<kw name="Submeto minhas credenciais" library="kws">
-<arguments>
-<arg>${input_email}</arg>
-<arg>${input_senha}</arg>
-</arguments>
-<kw name="Login With" library="LoginPage">
-<arguments>
-<arg>${email}</arg>
-<arg>${password}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:txtEmail</arg>
-<arg>${email}</arg>
-</arguments>
-<msg timestamp="20210628 23:08:04.510" level="INFO">Typing text 'joao@gmail.com' into text field 'id:txtEmail'.</msg>
-<status status="PASS" starttime="20210628 23:08:04.509" endtime="20210628 23:08:04.597"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>css:input[placeholder=Senha]</arg>
-<arg>${password}</arg>
-</arguments>
-<msg timestamp="20210628 23:08:04.597" level="INFO">Typing text '' into text field 'css:input[placeholder=Senha]'.</msg>
-<status status="PASS" starttime="20210628 23:08:04.597" endtime="20210628 23:08:04.661"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://button[text()='Entrar']</arg>
-</arguments>
-<msg timestamp="20210628 23:08:04.661" level="INFO">Clicking element 'xpath://button[text()='Entrar']'.</msg>
-<status status="PASS" starttime="20210628 23:08:04.661" endtime="20210628 23:08:04.705"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:04.509" endtime="20210628 23:08:04.706"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:04.508" endtime="20210628 23:08:04.706"></status>
-</kw>
-<kw name="Devo ver um toaster com a mensagem" library="kws">
-<arguments>
-<arg>${output_mensagem}</arg>
-</arguments>
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<arguments>
-<arg>${TOASTER_ERROR_P}</arg>
-<arg>${expect_message}</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:08:04.707" endtime="20210628 23:08:04.936"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:04.706" endtime="20210628 23:08:04.936"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:04.142" endtime="20210628 23:08:04.936"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:04.141" endtime="20210628 23:08:04.937" critical="yes"></status>
-</test>
-<test id="s1-s3-t3" name="Email em branco">
-<kw name="Tentativa de login">
-<arguments>
-<arg>${EMPTY}</arg>
-<arg>123456</arg>
-<arg>O campo email é obrigatório!</arg>
-</arguments>
-<kw name="Acesso a página Login" library="kws">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${base_url}</arg>
-</arguments>
-<msg timestamp="20210628 23:08:04.940" level="INFO">Opening url 'http://zepalheta-web:3000'</msg>
-<status status="PASS" starttime="20210628 23:08:04.940" endtime="20210628 23:08:05.267"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:04.939" endtime="20210628 23:08:05.267"></status>
-</kw>
-<kw name="Submeto minhas credenciais" library="kws">
-<arguments>
-<arg>${input_email}</arg>
-<arg>${input_senha}</arg>
-</arguments>
-<kw name="Login With" library="LoginPage">
-<arguments>
-<arg>${email}</arg>
-<arg>${password}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:txtEmail</arg>
-<arg>${email}</arg>
-</arguments>
-<msg timestamp="20210628 23:08:05.269" level="INFO">Typing text '' into text field 'id:txtEmail'.</msg>
-<status status="PASS" starttime="20210628 23:08:05.269" endtime="20210628 23:08:05.340"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>css:input[placeholder=Senha]</arg>
-<arg>${password}</arg>
-</arguments>
-<msg timestamp="20210628 23:08:05.341" level="INFO">Typing text '123456' into text field 'css:input[placeholder=Senha]'.</msg>
-<status status="PASS" starttime="20210628 23:08:05.340" endtime="20210628 23:08:05.407"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://button[text()='Entrar']</arg>
-</arguments>
-<msg timestamp="20210628 23:08:05.407" level="INFO">Clicking element 'xpath://button[text()='Entrar']'.</msg>
-<status status="PASS" starttime="20210628 23:08:05.407" endtime="20210628 23:08:05.451"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:05.268" endtime="20210628 23:08:05.451"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:05.268" endtime="20210628 23:08:05.452"></status>
-</kw>
-<kw name="Devo ver um toaster com a mensagem" library="kws">
-<arguments>
-<arg>${output_mensagem}</arg>
-</arguments>
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<arguments>
-<arg>${TOASTER_ERROR_P}</arg>
-<arg>${expect_message}</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:08:05.452" endtime="20210628 23:08:05.685"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:05.452" endtime="20210628 23:08:05.685"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:04.939" endtime="20210628 23:08:05.685"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:04.938" endtime="20210628 23:08:05.686" critical="yes"></status>
-</test>
-<test id="s1-s3-t4" name="Email e senha em branco">
-<kw name="Tentativa de login">
-<arguments>
-<arg>${EMPTY}</arg>
-<arg>${EMPTY}</arg>
-<arg>Os campos email e senha não foram preenchidos!</arg>
-</arguments>
-<kw name="Acesso a página Login" library="kws">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${base_url}</arg>
-</arguments>
-<msg timestamp="20210628 23:08:05.688" level="INFO">Opening url 'http://zepalheta-web:3000'</msg>
-<status status="PASS" starttime="20210628 23:08:05.688" endtime="20210628 23:08:05.731"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:05.688" endtime="20210628 23:08:05.731"></status>
-</kw>
-<kw name="Submeto minhas credenciais" library="kws">
-<arguments>
-<arg>${input_email}</arg>
-<arg>${input_senha}</arg>
-</arguments>
-<kw name="Login With" library="LoginPage">
-<arguments>
-<arg>${email}</arg>
-<arg>${password}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:txtEmail</arg>
-<arg>${email}</arg>
-</arguments>
-<msg timestamp="20210628 23:08:05.734" level="INFO">Typing text '' into text field 'id:txtEmail'.</msg>
-<status status="PASS" starttime="20210628 23:08:05.733" endtime="20210628 23:08:06.071"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>css:input[placeholder=Senha]</arg>
-<arg>${password}</arg>
-</arguments>
-<msg timestamp="20210628 23:08:06.071" level="INFO">Typing text '' into text field 'css:input[placeholder=Senha]'.</msg>
-<status status="PASS" starttime="20210628 23:08:06.071" endtime="20210628 23:08:06.136"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://button[text()='Entrar']</arg>
-</arguments>
-<msg timestamp="20210628 23:08:06.136" level="INFO">Clicking element 'xpath://button[text()='Entrar']'.</msg>
-<status status="PASS" starttime="20210628 23:08:06.136" endtime="20210628 23:08:06.177"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:05.731" endtime="20210628 23:08:06.177"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:05.731" endtime="20210628 23:08:06.177"></status>
-</kw>
-<kw name="Devo ver um toaster com a mensagem" library="kws">
-<arguments>
-<arg>${output_mensagem}</arg>
-</arguments>
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<arguments>
-<arg>${TOASTER_ERROR_P}</arg>
-<arg>${expect_message}</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:08:06.178" endtime="20210628 23:08:06.411"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:06.178" endtime="20210628 23:08:06.411"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:05.687" endtime="20210628 23:08:06.411"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:05.687" endtime="20210628 23:08:06.412" critical="yes"></status>
-</test>
-<test id="s1-s3-t5" name="Login incorreto">
-<kw name="Tentativa de login">
-<arguments>
-<arg>admin&amp;gmail.com</arg>
-<arg>abc123</arg>
-<arg>Ocorreu um erro ao fazer login, cheque as credenciais.</arg>
-</arguments>
-<kw name="Acesso a página Login" library="kws">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${base_url}</arg>
-</arguments>
-<msg timestamp="20210628 23:08:06.415" level="INFO">Opening url 'http://zepalheta-web:3000'</msg>
-<status status="PASS" starttime="20210628 23:08:06.415" endtime="20210628 23:08:06.748"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:06.415" endtime="20210628 23:08:06.749"></status>
-</kw>
-<kw name="Submeto minhas credenciais" library="kws">
-<arguments>
-<arg>${input_email}</arg>
-<arg>${input_senha}</arg>
-</arguments>
-<kw name="Login With" library="LoginPage">
-<arguments>
-<arg>${email}</arg>
-<arg>${password}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:txtEmail</arg>
-<arg>${email}</arg>
-</arguments>
-<msg timestamp="20210628 23:08:06.751" level="INFO">Typing text 'admin&amp;gmail.com' into text field 'id:txtEmail'.</msg>
-<status status="PASS" starttime="20210628 23:08:06.751" endtime="20210628 23:08:06.842"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>css:input[placeholder=Senha]</arg>
-<arg>${password}</arg>
-</arguments>
-<msg timestamp="20210628 23:08:06.842" level="INFO">Typing text 'abc123' into text field 'css:input[placeholder=Senha]'.</msg>
-<status status="PASS" starttime="20210628 23:08:06.842" endtime="20210628 23:08:06.912"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://button[text()='Entrar']</arg>
-</arguments>
-<msg timestamp="20210628 23:08:06.912" level="INFO">Clicking element 'xpath://button[text()='Entrar']'.</msg>
-<status status="PASS" starttime="20210628 23:08:06.912" endtime="20210628 23:08:06.951"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:06.750" endtime="20210628 23:08:06.951"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:06.749" endtime="20210628 23:08:06.951"></status>
-</kw>
-<kw name="Devo ver um toaster com a mensagem" library="kws">
-<arguments>
-<arg>${output_mensagem}</arg>
-</arguments>
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<arguments>
-<arg>${TOASTER_ERROR_P}</arg>
-<arg>${expect_message}</arg>
-</arguments>
-<status status="PASS" starttime="20210628 23:08:06.952" endtime="20210628 23:08:07.189"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:06.952" endtime="20210628 23:08:07.189"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:06.414" endtime="20210628 23:08:07.190"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:06.414" endtime="20210628 23:08:07.190" critical="yes"></status>
-</test>
-<kw name="Finish Session" library="hooks" type="teardown">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210628 23:08:07.192" endtime="20210628 23:08:09.361"></status>
-</kw>
-<status status="PASS" starttime="20210628 23:08:07.192" endtime="20210628 23:08:09.361"></status>
-</kw>
-<doc>Login Tentativa</doc>
-<status status="PASS" starttime="20210628 23:08:00.184" endtime="20210628 23:08:09.361"></status>
-</suite>
-<status status="FAIL" starttime="20210628 23:07:35.153" endtime="20210628 23:08:09.367"></status>
+<status status="PASS" starttime="20210705 22:54:34.173" endtime="20210705 22:54:41.798"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="10" fail="4">Critical Tests</stat>
-<stat pass="10" fail="4">All Tests</stat>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="2" fail="2">required</stat>
+<stat pass="1" fail="0">Smoke</stat>
 </tag>
 <suite>
-<stat pass="10" fail="4" id="s1" name="Tests">Tests</stat>
-<stat pass="4" fail="4" id="s1-s1" name="Cadastro Cliente">Tests.Cadastro Cliente</stat>
-<stat pass="1" fail="0" id="s1-s2" name="Login">Tests.Login</stat>
-<stat pass="5" fail="0" id="s1-s3" name="Login Tentativa">Tests.Login Tentativa</stat>
+<stat pass="1" fail="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Cadastro Cliente">Tests.Cadastro Cliente</stat>
 </suite>
 </statistics>
 <errors>

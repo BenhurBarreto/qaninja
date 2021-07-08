@@ -1,22 +1,25 @@
 ***Settings***
 Documentation       Cadastro de clientes
-Resource            ../resources/base.robot
+Resource            ../../resources/base.robot
 
 Suite Setup          Login Session
 Suite Teardown       Finish Session
 
 ***Test Cases***
 Novo cliente
+    [Tags]      Smoke
     Dado que acesso o formulário do cadastro de clientes
     E que eu tenho o seguinte cliente:
     ...         Bon Jovi        00000001406      Rua dos Bugs, 1000      51999999999
     Quando Faço A Inclusão Deste Cliente
     Então devo ver a notificação:       Cliente cadastrado com sucesso!
+    E esse cliente deve ser exibido na lista
 
 Cliente duplicado
     Dado que acesso o formulário do cadastro de clientes
     E que eu tenho o seguinte cliente:
     ...         Adrian Smith        00000001441      Rua dos Bugs, 2000      11999999999
+    Mas esse CPF já existe no sistema
     Quando Faço A Inclusão Deste Cliente
     Então devo ver a notificação de erro:       Este CPF já existe no sistema!
 
