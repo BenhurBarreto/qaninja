@@ -1,286 +1,594 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20210705 22:54:34.171" rpa="false">
-<suite id="s1" name="Tests" source="c:\qaninja\ze-palheta\tests">
-<suite id="s1-s1" name="Cadastro Cliente" source="c:\qaninja\ze-palheta\tests\cadastro_cliente.robot">
-<kw name="Login Session" library="hooks" type="setup">
-<kw name="Start Session" library="hooks">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
+<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20210719 23:03:00.325" rpa="false">
+<suite id="s1" name="Delete Customers" source="c:\qaninja\ze-palheta\tests\api\customers\delete_customers.robot">
+<test id="s1-t1" name="Delete Customer">
+<kw name="Get Json" library="helpers">
 <arguments>
-<arg>about:blank</arg>
-<arg>chrome</arg>
-</arguments>
-<msg timestamp="20210705 22:54:34.481" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20210705 22:54:34.481" endtime="20210705 22:54:35.789"></status>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210705 22:54:35.790" endtime="20210705 22:54:35.905"></status>
-</kw>
-<status status="PASS" starttime="20210705 22:54:34.480" endtime="20210705 22:54:35.905"></status>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${base_url}</arg>
-</arguments>
-<msg timestamp="20210705 22:54:35.905" level="INFO">Opening url 'http://zepalheta-web:3000'</msg>
-<status status="PASS" starttime="20210705 22:54:35.905" endtime="20210705 22:54:38.031"></status>
-</kw>
-<kw name="Login With" library="LoginPage">
-<arguments>
-<arg>${admin_user}</arg>
-<arg>${admin_pass}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:txtEmail</arg>
-<arg>${email}</arg>
-</arguments>
-<msg timestamp="20210705 22:54:38.031" level="INFO">Typing text 'admin@zepalheta.com.br' into text field 'id:txtEmail'.</msg>
-<status status="PASS" starttime="20210705 22:54:38.031" endtime="20210705 22:54:38.169"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>css:input[placeholder=Senha]</arg>
-<arg>${password}</arg>
-</arguments>
-<msg timestamp="20210705 22:54:38.170" level="INFO">Typing text 'pwd123' into text field 'css:input[placeholder=Senha]'.</msg>
-<status status="PASS" starttime="20210705 22:54:38.169" endtime="20210705 22:54:38.255"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://button[text()='Entrar']</arg>
-</arguments>
-<msg timestamp="20210705 22:54:38.256" level="INFO">Clicking element 'xpath://button[text()='Entrar']'.</msg>
-<status status="PASS" starttime="20210705 22:54:38.255" endtime="20210705 22:54:38.310"></status>
-</kw>
-<status status="PASS" starttime="20210705 22:54:38.031" endtime="20210705 22:54:38.310"></status>
-</kw>
-<status status="PASS" starttime="20210705 22:54:34.480" endtime="20210705 22:54:38.310"></status>
-</kw>
-<test id="s1-s1-t1" name="Novo cliente">
-<kw name="Dado que acesso o formulário do cadastro de clientes" library="kws">
-<kw name="Go To Customers" library="Sidebar">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${NAV_CUSTOMERS}</arg>
-<arg>5</arg>
-</arguments>
-<status status="PASS" starttime="20210705 22:54:38.314" endtime="20210705 22:54:38.542"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${NAV_CUSTOMERS}</arg>
-</arguments>
-<msg timestamp="20210705 22:54:38.542" level="INFO">Clicking element 'css:a[href$=customers]'.</msg>
-<status status="PASS" starttime="20210705 22:54:38.542" endtime="20210705 22:54:38.582"></status>
-</kw>
-<status status="PASS" starttime="20210705 22:54:38.314" endtime="20210705 22:54:38.582"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${CUSTOMER_FORM}</arg>
-<arg>5</arg>
-</arguments>
-<status status="PASS" starttime="20210705 22:54:38.582" endtime="20210705 22:54:38.608"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${CUSTOMER_FORM}</arg>
-</arguments>
-<msg timestamp="20210705 22:54:38.608" level="INFO">Clicking element 'css:a[href$=register]'.</msg>
-<status status="PASS" starttime="20210705 22:54:38.608" endtime="20210705 22:54:38.655"></status>
-</kw>
-<status status="PASS" starttime="20210705 22:54:38.313" endtime="20210705 22:54:38.655"></status>
-</kw>
-<kw name="E que eu tenho o seguinte cliente:" library="kws">
-<arguments>
-<arg>Bon Jovi</arg>
-<arg>00000001406</arg>
-<arg>Rua dos Bugs, 1000</arg>
-<arg>51999999999</arg>
-</arguments>
-<kw name="Remove Customer By Cpf" library="db">
-<arguments>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210705 22:54:38.671" level="INFO">delete from public.customers where cpf = '000.000.014-06';</msg>
-<status status="PASS" starttime="20210705 22:54:38.656" endtime="20210705 22:54:38.671"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${name}</arg>
-</arguments>
-<msg timestamp="20210705 22:54:38.672" level="INFO">${name} = Bon Jovi</msg>
-<status status="PASS" starttime="20210705 22:54:38.671" endtime="20210705 22:54:38.672"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210705 22:54:38.672" level="INFO">${cpf} = 00000001406</msg>
-<status status="PASS" starttime="20210705 22:54:38.672" endtime="20210705 22:54:38.672"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${address}</arg>
-</arguments>
-<msg timestamp="20210705 22:54:38.672" level="INFO">${address} = Rua dos Bugs, 1000</msg>
-<status status="PASS" starttime="20210705 22:54:38.672" endtime="20210705 22:54:38.672"></status>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<arguments>
-<arg>${phone_number}</arg>
-</arguments>
-<msg timestamp="20210705 22:54:38.673" level="INFO">${phone_number} = 51999999999</msg>
-<status status="PASS" starttime="20210705 22:54:38.673" endtime="20210705 22:54:38.673"></status>
-</kw>
-<status status="PASS" starttime="20210705 22:54:38.656" endtime="20210705 22:54:38.673"></status>
-</kw>
-<kw name="Quando Faço A Inclusão Deste Cliente" library="kws">
-<kw name="Register New Customer" library="CustomersPage">
-<arguments>
-<arg>${name}</arg>
-<arg>${cpf}</arg>
-<arg>${address}</arg>
-<arg>${phone_number}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:name</arg>
-<arg>${name}</arg>
-</arguments>
-<msg timestamp="20210705 22:54:38.675" level="INFO">Typing text 'Bon Jovi' into text field 'id:name'.</msg>
-<status status="PASS" starttime="20210705 22:54:38.675" endtime="20210705 22:54:38.744"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:cpf</arg>
-<arg>${cpf}</arg>
-</arguments>
-<msg timestamp="20210705 22:54:38.745" level="INFO">Typing text '00000001406' into text field 'id:cpf'.</msg>
-<status status="PASS" starttime="20210705 22:54:38.744" endtime="20210705 22:54:38.825"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:address</arg>
-<arg>${address}</arg>
-</arguments>
-<msg timestamp="20210705 22:54:38.825" level="INFO">Typing text 'Rua dos Bugs, 1000' into text field 'id:address'.</msg>
-<status status="PASS" starttime="20210705 22:54:38.825" endtime="20210705 22:54:38.925"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:phone_number</arg>
-<arg>${phone_number}</arg>
-</arguments>
-<msg timestamp="20210705 22:54:38.926" level="INFO">Typing text '51999999999' into text field 'id:phone_number'.</msg>
-<status status="PASS" starttime="20210705 22:54:38.925" endtime="20210705 22:54:39.013"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://button[text()='CADASTRAR']</arg>
-</arguments>
-<msg timestamp="20210705 22:54:39.013" level="INFO">Clicking element 'xpath://button[text()='CADASTRAR']'.</msg>
-<status status="PASS" starttime="20210705 22:54:39.013" endtime="20210705 22:54:39.082"></status>
-</kw>
-<status status="PASS" starttime="20210705 22:54:38.674" endtime="20210705 22:54:39.082"></status>
-</kw>
-<status status="PASS" starttime="20210705 22:54:38.674" endtime="20210705 22:54:39.082"></status>
-</kw>
-<kw name="Então devo ver a notificação:" library="kws">
-<arguments>
-<arg>Cliente cadastrado com sucesso!</arg>
-</arguments>
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<arguments>
-<arg>${TOASTER_SUCCESS}</arg>
-<arg>${expect_notice}</arg>
-<arg>5</arg>
-</arguments>
-<status status="PASS" starttime="20210705 22:54:39.084" endtime="20210705 22:54:39.349"></status>
-</kw>
-<status status="PASS" starttime="20210705 22:54:39.083" endtime="20210705 22:54:39.349"></status>
-</kw>
-<kw name="E esse cliente deve ser exibido na lista" library="kws">
-<kw name="Format Cpf" library="db">
-<arguments>
-<arg>${cpf}</arg>
+<arg>customers/delete.json</arg>
 </arguments>
 <assign>
-<var>${cpf_formatado}</var>
+<var>${origin}</var>
 </assign>
-<msg timestamp="20210705 22:54:39.350" level="INFO">${cpf_formatado} = 000.000.014-06</msg>
-<status status="PASS" starttime="20210705 22:54:39.350" endtime="20210705 22:54:39.350"></status>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20210705 22:54:39.351" endtime="20210705 22:54:39.361"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
+<kw name="Get File" library="OperatingSystem">
+<doc>Returns the contents of a specified file.</doc>
 <arguments>
-<arg>${CUSTOMER_LIST}</arg>
-<arg>5</arg>
+<arg>${EXECDIR}/resources/fixtures/${file_name}</arg>
 </arguments>
-<status status="PASS" starttime="20210705 22:54:39.362" endtime="20210705 22:54:39.388"></status>
+<assign>
+<var>${json_file}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.490" level="INFO" html="yes">Getting file '&lt;a href="file://c:\qaninja\ze-palheta\resources\fixtures\customers\delete.json"&gt;c:\qaninja\ze-palheta\resources\fixtures\customers\delete.json&lt;/a&gt;'.</msg>
+<msg timestamp="20210719 23:03:00.490" level="INFO">${json_file} = {
+	"name":"Chimbinha",
+	"cpf":"797.777.777-77",
+	"address":"Rua dos Bugs, 1000",
+	"phone_number":"(51) 9.9988-6633"
+}</msg>
+<status status="PASS" starttime="20210719 23:03:00.490" endtime="20210719 23:03:00.490"></status>
 </kw>
-<kw name="Table Should Contain" library="SeleniumLibrary">
-<doc>Verifies table contains text ``expected``.</doc>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
 <arguments>
-<arg>${CUSTOMER_LIST}</arg>
-<arg>${cpf_formatado}</arg>
+<arg>json.loads($json_file)</arg>
+<arg>json</arg>
 </arguments>
-<status status="PASS" starttime="20210705 22:54:39.388" endtime="20210705 22:54:39.518"></status>
+<assign>
+<var>${json_dict}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.494" level="INFO">${json_dict} = {'name': 'Chimbinha', 'cpf': '797.777.777-77', 'address': 'Rua dos Bugs, 1000', 'phone_number': '(51) 9.9988-6633'}</msg>
+<status status="PASS" starttime="20210719 23:03:00.491" endtime="20210719 23:03:00.494"></status>
 </kw>
-<status status="PASS" starttime="20210705 22:54:39.350" endtime="20210705 22:54:39.518"></status>
+<msg timestamp="20210719 23:03:00.495" level="INFO">${origin} = {'name': 'Chimbinha', 'cpf': '797.777.777-77', 'address': 'Rua dos Bugs, 1000', 'phone_number': '(51) 9.9988-6633'}</msg>
+<status status="PASS" starttime="20210719 23:03:00.489" endtime="20210719 23:03:00.495"></status>
 </kw>
-<tags>
-<tag>Smoke</tag>
-</tags>
-<status status="PASS" starttime="20210705 22:54:38.311" endtime="20210705 22:54:39.518" critical="yes"></status>
+<kw name="Delete Customer" library="services">
+<arguments>
+<arg>${origin['cpf']}</arg>
+</arguments>
+<kw name="Get Session Token" library="services">
+<assign>
+<var>${token}</var>
+</assign>
+<kw name="Post Session" library="services">
+<arguments>
+<arg>admin@zepalheta.com.br</arg>
+<arg>pwd123</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>zp-api</arg>
+<arg>${base_url_api}</arg>
+</arguments>
+<msg timestamp="20210719 23:03:00.497" level="INFO">Creating Session using : alias=zp-api, url=http://zepalheta-api:3333, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210719 23:03:00.497" endtime="20210719 23:03:00.497"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.498" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" starttime="20210719 23:03:00.497" endtime="20210719 23:03:00.498"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>email=${email}</arg>
+<arg>password=${password}</arg>
+</arguments>
+<assign>
+<var>&amp;{payload}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.498" level="INFO">&amp;{payload} = { email=admin@zepalheta.com.br | password=pwd123 }</msg>
+<status status="PASS" starttime="20210719 23:03:00.498" endtime="20210719 23:03:00.498"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>zp-api</arg>
+<arg>/sessions</arg>
+<arg>data=${payload}</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.542" level="INFO">POST Request : url=http://zepalheta-api:3333/sessions 
+ path_url=/sessions 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body={"email": "admin@zepalheta.com.br", "password": "pwd123"} 
+ </msg>
+<msg timestamp="20210719 23:03:00.543" level="INFO">POST Response : url=http://zepalheta-api:3333/sessions 
+ status=200, reason=OK 
+ body={"user":{"id":"a3ab268e-c2d5-4ec0-83da-f35ee1652ce4","name":"Admin","email":"admin@zepalheta.com.br","password_hash":"$2a$08$eJ60B4RsaLSbSLF2acHICu2aFoslT8KUwkw/ph9khYwyNNUIHx6qK","created_at":"2021-07-20T01:25:43.542Z","updated_at":"2021-07-20T01:25:43.542Z"},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0.fZGCU4Kw-ZsfWCPTJOTxEIYDCUFCv0iT0_7o7V5_nNs"} 
+ </msg>
+<msg timestamp="20210719 23:03:00.543" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210719 23:03:00.498" endtime="20210719 23:03:00.543"></status>
+</kw>
+<msg timestamp="20210719 23:03:00.543" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210719 23:03:00.496" endtime="20210719 23:03:00.543"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>Bearer ${resp.json()['token']}</arg>
+</arguments>
+<assign>
+<var>${token}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.544" level="INFO">${token} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0.fZGCU4Kw-ZsfWCPTJOTxEIYDCUFCv0iT0_7o7V5_nNs</msg>
+<status status="PASS" starttime="20210719 23:03:00.544" endtime="20210719 23:03:00.544"></status>
+</kw>
+<msg timestamp="20210719 23:03:00.545" level="INFO">${token} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0.fZGCU4Kw-ZsfWCPTJOTxEIYDCUFCv0iT0_7o7V5_nNs</msg>
+<status status="PASS" starttime="20210719 23:03:00.496" endtime="20210719 23:03:00.545"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>content-type=application/jason</arg>
+<arg>authorization=${token}</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.546" level="INFO">&amp;{headers} = { content-type=application/jason | authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0...</msg>
+<status status="PASS" starttime="20210719 23:03:00.545" endtime="20210719 23:03:00.546"></status>
+</kw>
+<kw name="Delete Request" library="RequestsLibrary">
+<doc>Send a DELETE request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>zp-api</arg>
+<arg>/customers/${cpf}</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<msg timestamp="20210719 23:03:00.554" level="INFO">DELETE Request : url=http://zepalheta-api:3333/customers/797.777.777-77 
+ path_url=/customers/797.777.777-77 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'content-type': 'application/jason', 'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0.fZGCU4Kw-ZsfWCPTJOTxEIYDCUFCv0iT0_7o7V5_nNs', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20210719 23:03:00.554" level="INFO">DELETE Response : url=http://zepalheta-api:3333/customers/797.777.777-77 
+ status=404, reason=Not Found 
+ body={"status":"error","message":"Customer not found"} 
+ </msg>
+<status status="PASS" starttime="20210719 23:03:00.546" endtime="20210719 23:03:00.554"></status>
+</kw>
+<status status="PASS" starttime="20210719 23:03:00.496" endtime="20210719 23:03:00.554"></status>
+</kw>
+<kw name="Post Customer" library="services">
+<arguments>
+<arg>${origin}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>zp-api</arg>
+<arg>${base_url_api}</arg>
+</arguments>
+<msg timestamp="20210719 23:03:00.555" level="INFO">Creating Session using : alias=zp-api, url=http://zepalheta-api:3333, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210719 23:03:00.555" endtime="20210719 23:03:00.556"></status>
+</kw>
+<kw name="Get Session Token" library="services">
+<assign>
+<var>${token}</var>
+</assign>
+<kw name="Post Session" library="services">
+<arguments>
+<arg>admin@zepalheta.com.br</arg>
+<arg>pwd123</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>zp-api</arg>
+<arg>${base_url_api}</arg>
+</arguments>
+<msg timestamp="20210719 23:03:00.557" level="INFO">Creating Session using : alias=zp-api, url=http://zepalheta-api:3333, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210719 23:03:00.556" endtime="20210719 23:03:00.557"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.557" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" starttime="20210719 23:03:00.557" endtime="20210719 23:03:00.557"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>email=${email}</arg>
+<arg>password=${password}</arg>
+</arguments>
+<assign>
+<var>&amp;{payload}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.558" level="INFO">&amp;{payload} = { email=admin@zepalheta.com.br | password=pwd123 }</msg>
+<status status="PASS" starttime="20210719 23:03:00.557" endtime="20210719 23:03:00.558"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>zp-api</arg>
+<arg>/sessions</arg>
+<arg>data=${payload}</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.587" level="INFO">POST Request : url=http://zepalheta-api:3333/sessions 
+ path_url=/sessions 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body={"email": "admin@zepalheta.com.br", "password": "pwd123"} 
+ </msg>
+<msg timestamp="20210719 23:03:00.587" level="INFO">POST Response : url=http://zepalheta-api:3333/sessions 
+ status=200, reason=OK 
+ body={"user":{"id":"a3ab268e-c2d5-4ec0-83da-f35ee1652ce4","name":"Admin","email":"admin@zepalheta.com.br","password_hash":"$2a$08$eJ60B4RsaLSbSLF2acHICu2aFoslT8KUwkw/ph9khYwyNNUIHx6qK","created_at":"2021-07-20T01:25:43.542Z","updated_at":"2021-07-20T01:25:43.542Z"},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0.fZGCU4Kw-ZsfWCPTJOTxEIYDCUFCv0iT0_7o7V5_nNs"} 
+ </msg>
+<msg timestamp="20210719 23:03:00.588" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210719 23:03:00.558" endtime="20210719 23:03:00.588"></status>
+</kw>
+<msg timestamp="20210719 23:03:00.589" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210719 23:03:00.556" endtime="20210719 23:03:00.589"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>Bearer ${resp.json()['token']}</arg>
+</arguments>
+<assign>
+<var>${token}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.591" level="INFO">${token} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0.fZGCU4Kw-ZsfWCPTJOTxEIYDCUFCv0iT0_7o7V5_nNs</msg>
+<status status="PASS" starttime="20210719 23:03:00.589" endtime="20210719 23:03:00.591"></status>
+</kw>
+<msg timestamp="20210719 23:03:00.591" level="INFO">${token} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0.fZGCU4Kw-ZsfWCPTJOTxEIYDCUFCv0iT0_7o7V5_nNs</msg>
+<status status="PASS" starttime="20210719 23:03:00.556" endtime="20210719 23:03:00.591"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>content-type=application/jason</arg>
+<arg>authorization=${token}</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.592" level="INFO">&amp;{headers} = { content-type=application/jason | authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0...</msg>
+<status status="PASS" starttime="20210719 23:03:00.592" endtime="20210719 23:03:00.592"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>zp-api</arg>
+<arg>/customers</arg>
+<arg>data=${payload}</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.596" level="INFO">POST Request : url=http://zepalheta-api:3333/customers 
+ path_url=/customers 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'content-type': 'application/jason', 'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0.fZGCU4Kw-ZsfWCPTJOTxEIYDCUFCv0iT0_7o7V5_nNs', 'Content-Length': '96'} 
+ body=name=Chimbinha&amp;cpf=797.777.777-77&amp;address=Rua+dos+Bugs%2C+1000&amp;phone_number=%2851%29+9.9988-6633 
+ </msg>
+<msg timestamp="20210719 23:03:00.596" level="INFO">POST Response : url=http://zepalheta-api:3333/customers 
+ status=400, reason=Bad Request 
+ body={"statusCode":400,"error":"Bad Request","message":"\"name\" is required","validation":{"source":"body","keys":["name"]}} 
+ </msg>
+<msg timestamp="20210719 23:03:00.596" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20210719 23:03:00.592" endtime="20210719 23:03:00.596"></status>
+</kw>
+<msg timestamp="20210719 23:03:00.597" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20210719 23:03:00.555" endtime="20210719 23:03:00.597"></status>
+</kw>
+<kw name="Delete Customer" library="services">
+<arguments>
+<arg>${origin['cpf']}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<kw name="Get Session Token" library="services">
+<assign>
+<var>${token}</var>
+</assign>
+<kw name="Post Session" library="services">
+<arguments>
+<arg>admin@zepalheta.com.br</arg>
+<arg>pwd123</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>zp-api</arg>
+<arg>${base_url_api}</arg>
+</arguments>
+<msg timestamp="20210719 23:03:00.599" level="INFO">Creating Session using : alias=zp-api, url=http://zepalheta-api:3333, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210719 23:03:00.598" endtime="20210719 23:03:00.599"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.599" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" starttime="20210719 23:03:00.599" endtime="20210719 23:03:00.599"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>email=${email}</arg>
+<arg>password=${password}</arg>
+</arguments>
+<assign>
+<var>&amp;{payload}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.600" level="INFO">&amp;{payload} = { email=admin@zepalheta.com.br | password=pwd123 }</msg>
+<status status="PASS" starttime="20210719 23:03:00.599" endtime="20210719 23:03:00.600"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>zp-api</arg>
+<arg>/sessions</arg>
+<arg>data=${payload}</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.628" level="INFO">POST Request : url=http://zepalheta-api:3333/sessions 
+ path_url=/sessions 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body={"email": "admin@zepalheta.com.br", "password": "pwd123"} 
+ </msg>
+<msg timestamp="20210719 23:03:00.628" level="INFO">POST Response : url=http://zepalheta-api:3333/sessions 
+ status=200, reason=OK 
+ body={"user":{"id":"a3ab268e-c2d5-4ec0-83da-f35ee1652ce4","name":"Admin","email":"admin@zepalheta.com.br","password_hash":"$2a$08$eJ60B4RsaLSbSLF2acHICu2aFoslT8KUwkw/ph9khYwyNNUIHx6qK","created_at":"2021-07-20T01:25:43.542Z","updated_at":"2021-07-20T01:25:43.542Z"},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0.fZGCU4Kw-ZsfWCPTJOTxEIYDCUFCv0iT0_7o7V5_nNs"} 
+ </msg>
+<msg timestamp="20210719 23:03:00.628" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210719 23:03:00.600" endtime="20210719 23:03:00.628"></status>
+</kw>
+<msg timestamp="20210719 23:03:00.628" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210719 23:03:00.598" endtime="20210719 23:03:00.628"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>Bearer ${resp.json()['token']}</arg>
+</arguments>
+<assign>
+<var>${token}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.629" level="INFO">${token} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0.fZGCU4Kw-ZsfWCPTJOTxEIYDCUFCv0iT0_7o7V5_nNs</msg>
+<status status="PASS" starttime="20210719 23:03:00.628" endtime="20210719 23:03:00.629"></status>
+</kw>
+<msg timestamp="20210719 23:03:00.629" level="INFO">${token} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0.fZGCU4Kw-ZsfWCPTJOTxEIYDCUFCv0iT0_7o7V5_nNs</msg>
+<status status="PASS" starttime="20210719 23:03:00.598" endtime="20210719 23:03:00.629"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>content-type=application/jason</arg>
+<arg>authorization=${token}</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.629" level="INFO">&amp;{headers} = { content-type=application/jason | authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0...</msg>
+<status status="PASS" starttime="20210719 23:03:00.629" endtime="20210719 23:03:00.630"></status>
+</kw>
+<kw name="Delete Request" library="RequestsLibrary">
+<doc>Send a DELETE request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>zp-api</arg>
+<arg>/customers/${cpf}</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<msg timestamp="20210719 23:03:00.636" level="INFO">DELETE Request : url=http://zepalheta-api:3333/customers/797.777.777-77 
+ path_url=/customers/797.777.777-77 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'content-type': 'application/jason', 'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0.fZGCU4Kw-ZsfWCPTJOTxEIYDCUFCv0iT0_7o7V5_nNs', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20210719 23:03:00.636" level="INFO">DELETE Response : url=http://zepalheta-api:3333/customers/797.777.777-77 
+ status=404, reason=Not Found 
+ body={"status":"error","message":"Customer not found"} 
+ </msg>
+<status status="PASS" starttime="20210719 23:03:00.630" endtime="20210719 23:03:00.636"></status>
+</kw>
+<msg timestamp="20210719 23:03:00.636" level="INFO">${resp} = None</msg>
+<status status="PASS" starttime="20210719 23:03:00.597" endtime="20210719 23:03:00.636"></status>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<doc>Fails if response status code is different than the expected.</doc>
+<arguments>
+<arg>204</arg>
+<arg>${resp}</arg>
+</arguments>
+<msg timestamp="20210719 23:03:00.638" level="FAIL">InvalidResponse: None</msg>
+<status status="FAIL" starttime="20210719 23:03:00.637" endtime="20210719 23:03:00.639"></status>
+</kw>
+<status status="FAIL" starttime="20210719 23:03:00.489" endtime="20210719 23:03:00.641" critical="yes">InvalidResponse: None</status>
 </test>
-<kw name="Finish Session" library="hooks" type="teardown">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210705 22:54:39.520" endtime="20210705 22:54:41.784"></status>
+<test id="s1-t2" name="Customer Not Found">
+<kw name="Delete Customer" library="services">
+<arguments>
+<arg>698dc19d489c4e4db73e28a713eab07b</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<kw name="Get Session Token" library="services">
+<assign>
+<var>${token}</var>
+</assign>
+<kw name="Post Session" library="services">
+<arguments>
+<arg>admin@zepalheta.com.br</arg>
+<arg>pwd123</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>zp-api</arg>
+<arg>${base_url_api}</arg>
+</arguments>
+<msg timestamp="20210719 23:03:00.645" level="INFO">Creating Session using : alias=zp-api, url=http://zepalheta-api:3333, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210719 23:03:00.645" endtime="20210719 23:03:00.645"></status>
 </kw>
-<status status="PASS" starttime="20210705 22:54:39.520" endtime="20210705 22:54:41.784"></status>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.646" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" starttime="20210719 23:03:00.645" endtime="20210719 23:03:00.646"></status>
 </kw>
-<doc>Cadastro de clientes</doc>
-<status status="PASS" starttime="20210705 22:54:34.205" endtime="20210705 22:54:41.784"></status>
-</suite>
-<status status="PASS" starttime="20210705 22:54:34.173" endtime="20210705 22:54:41.798"></status>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>email=${email}</arg>
+<arg>password=${password}</arg>
+</arguments>
+<assign>
+<var>&amp;{payload}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.646" level="INFO">&amp;{payload} = { email=admin@zepalheta.com.br | password=pwd123 }</msg>
+<status status="PASS" starttime="20210719 23:03:00.646" endtime="20210719 23:03:00.646"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>zp-api</arg>
+<arg>/sessions</arg>
+<arg>data=${payload}</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.675" level="INFO">POST Request : url=http://zepalheta-api:3333/sessions 
+ path_url=/sessions 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body={"email": "admin@zepalheta.com.br", "password": "pwd123"} 
+ </msg>
+<msg timestamp="20210719 23:03:00.675" level="INFO">POST Response : url=http://zepalheta-api:3333/sessions 
+ status=200, reason=OK 
+ body={"user":{"id":"a3ab268e-c2d5-4ec0-83da-f35ee1652ce4","name":"Admin","email":"admin@zepalheta.com.br","password_hash":"$2a$08$eJ60B4RsaLSbSLF2acHICu2aFoslT8KUwkw/ph9khYwyNNUIHx6qK","created_at":"2021-07-20T01:25:43.542Z","updated_at":"2021-07-20T01:25:43.542Z"},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0.fZGCU4Kw-ZsfWCPTJOTxEIYDCUFCv0iT0_7o7V5_nNs"} 
+ </msg>
+<msg timestamp="20210719 23:03:00.676" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210719 23:03:00.646" endtime="20210719 23:03:00.676"></status>
+</kw>
+<msg timestamp="20210719 23:03:00.676" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210719 23:03:00.644" endtime="20210719 23:03:00.676"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>Bearer ${resp.json()['token']}</arg>
+</arguments>
+<assign>
+<var>${token}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.676" level="INFO">${token} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0.fZGCU4Kw-ZsfWCPTJOTxEIYDCUFCv0iT0_7o7V5_nNs</msg>
+<status status="PASS" starttime="20210719 23:03:00.676" endtime="20210719 23:03:00.676"></status>
+</kw>
+<msg timestamp="20210719 23:03:00.677" level="INFO">${token} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0.fZGCU4Kw-ZsfWCPTJOTxEIYDCUFCv0iT0_7o7V5_nNs</msg>
+<status status="PASS" starttime="20210719 23:03:00.644" endtime="20210719 23:03:00.677"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>content-type=application/jason</arg>
+<arg>authorization=${token}</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20210719 23:03:00.677" level="INFO">&amp;{headers} = { content-type=application/jason | authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0...</msg>
+<status status="PASS" starttime="20210719 23:03:00.677" endtime="20210719 23:03:00.677"></status>
+</kw>
+<kw name="Delete Request" library="RequestsLibrary">
+<doc>Send a DELETE request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>zp-api</arg>
+<arg>/customers/${cpf}</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<msg timestamp="20210719 23:03:00.682" level="INFO">DELETE Request : url=http://zepalheta-api:3333/customers/698dc19d489c4e4db73e28a713eab07b 
+ path_url=/customers/698dc19d489c4e4db73e28a713eab07b 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'content-type': 'application/jason', 'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjY3NDY1ODAsImV4cCI6MTYyNjgzMjk4MCwic3ViIjoiYTNhYjI2OGUtYzJkNS00ZWMwLTgzZGEtZjM1ZWUxNjUyY2U0In0.fZGCU4Kw-ZsfWCPTJOTxEIYDCUFCv0iT0_7o7V5_nNs', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20210719 23:03:00.683" level="INFO">DELETE Response : url=http://zepalheta-api:3333/customers/698dc19d489c4e4db73e28a713eab07b 
+ status=404, reason=Not Found 
+ body={"status":"error","message":"Customer not found"} 
+ </msg>
+<status status="PASS" starttime="20210719 23:03:00.677" endtime="20210719 23:03:00.683"></status>
+</kw>
+<msg timestamp="20210719 23:03:00.683" level="INFO">${resp} = None</msg>
+<status status="PASS" starttime="20210719 23:03:00.644" endtime="20210719 23:03:00.683"></status>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<doc>Fails if response status code is different than the expected.</doc>
+<arguments>
+<arg>404</arg>
+<arg>${resp}</arg>
+</arguments>
+<msg timestamp="20210719 23:03:00.684" level="FAIL">InvalidResponse: None</msg>
+<status status="FAIL" starttime="20210719 23:03:00.683" endtime="20210719 23:03:00.684"></status>
+</kw>
+<status status="FAIL" starttime="20210719 23:03:00.643" endtime="20210719 23:03:00.684" critical="yes">InvalidResponse: None</status>
+</test>
+<status status="FAIL" starttime="20210719 23:03:00.326" endtime="20210719 23:03:00.686"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0">Critical Tests</stat>
-<stat pass="1" fail="0">All Tests</stat>
+<stat pass="0" fail="2">Critical Tests</stat>
+<stat pass="0" fail="2">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0">Smoke</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" id="s1" name="Tests">Tests</stat>
-<stat pass="1" fail="0" id="s1-s1" name="Cadastro Cliente">Tests.Cadastro Cliente</stat>
+<stat pass="0" fail="2" id="s1" name="Delete Customers">Delete Customers</stat>
 </suite>
 </statistics>
 <errors>

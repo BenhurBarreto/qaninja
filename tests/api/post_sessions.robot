@@ -1,6 +1,6 @@
 *** Settings ***
 
-Resource    ../../../resources/services.robot
+Resource    ../../../resources/pages/services.robot
 
 *** Test Cases ***
 Login com Sucesso   
